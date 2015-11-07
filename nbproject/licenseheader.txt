@@ -1,0 +1,12 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}${project.name}
+${licensePrefix}José David Mora Loría
+${licensePrefix}Oscar Mauricio Gil
+${licensePrefix}Melvin Arce Rodriguez
+${licensePrefix}${date}
+<#if licenseLast??>
+${licenseLast}
+</#if>
+
