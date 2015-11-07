@@ -5,6 +5,7 @@ ${licensePrefix}${project.name}
 ${licensePrefix}José David Mora Loría
 ${licensePrefix}Oscar Mauricio Gil
 ${licensePrefix}Melvin Arce Rodriguez
+${licensePrefix}Marvin Andrei Sandi Brenes
 ${licensePrefix}${date}
 <#if licenseLast??>
 ${licenseLast}
