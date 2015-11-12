@@ -13,5 +13,13 @@ package hotellounge.modelo;
  * @author jmora
  */
 public class Hotel {
-    
+
+    String nombreHotel;
+    int numeroTelefonicoHotel;
+    String direccionHotel;
+    String correoHotel;
+    int habitaciones;
+    String actividades;
+    String decripcionHotel;
+    String reservaciones;
 }

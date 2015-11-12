@@ -13,5 +13,11 @@ package hotellounge.modelo;
  * @author Cocho
  */
 public class Actividad {
-    
+
+    int codigoActividad;
+    String titulo;
+    String descripcionActividad;
+    String horaInicial;
+    String horaFinal;
+    int precioPersona;
 }

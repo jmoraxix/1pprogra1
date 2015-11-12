@@ -13,5 +13,11 @@ package hotellounge.modelo;
  * @author Cocho
  */
 public class Habitacion {
-    
+
+    int codigoHabitacion;
+    int numeroCamas;
+    int maximoPersonas;
+    String tipo;
+    int precioNoche;
+    String descripcionHabitacion;
 }

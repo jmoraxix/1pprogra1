@@ -13,5 +13,10 @@ package hotellounge.modelo;
  * @author Cocho
  */
 public class Cliente {
-    
+
+    int cedula;
+    String nombreCliente;
+    int telefonoCliente;
+    String correo;
+
 }

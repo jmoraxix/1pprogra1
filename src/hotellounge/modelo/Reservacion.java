@@ -13,5 +13,9 @@ package hotellounge.modelo;
  * @author Cocho
  */
 public class Reservacion {
+    int codigoReservacion;
+    int dias;
+    int cantidadPersonas;
+    String fechaReservacion; 
     
 }
