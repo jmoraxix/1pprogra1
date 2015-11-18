@@ -14,10 +14,59 @@ package hotellounge.modelo;
  */
 public class Habitacion {
 
-    int codigoHabitacion;
-    int numeroCamas;
-    int maximoPersonas;
-    String tipo;
-    int precioNoche;
-    String descripcionHabitacion;
+    private int codigoHabitacion;
+    private int numeroCamas;
+    private int maximoPersonas;
+    private String tipo;
+    private int precioNoche;
+    private String descripcionHabitacion;
+
+    public int getCodigoHabitacion() {
+        return codigoHabitacion;
+    }
+
+    public void setCodigoHabitacion(int codigoHabitacion) {
+        this.codigoHabitacion = codigoHabitacion;
+    }
+
+    public int getNumeroCamas() {
+        return numeroCamas;
+    }
+
+    public void setNumeroCamas(int numeroCamas) {
+        this.numeroCamas = numeroCamas;
+    }
+
+    public int getMaximoPersonas() {
+        return maximoPersonas;
+    }
+
+    public void setMaximoPersonas(int maximoPersonas) {
+        this.maximoPersonas = maximoPersonas;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getPrecioNoche() {
+        return precioNoche;
+    }
+
+    public void setPrecioNoche(int precioNoche) {
+        this.precioNoche = precioNoche;
+    }
+
+    public String getDescripcionHabitacion() {
+        return descripcionHabitacion;
+    }
+
+    public void setDescripcionHabitacion(String descripcionHabitacion) {
+        this.descripcionHabitacion = descripcionHabitacion;
+    }
+
 }

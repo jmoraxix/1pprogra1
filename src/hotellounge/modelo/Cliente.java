@@ -14,9 +14,41 @@ package hotellounge.modelo;
  */
 public class Cliente {
 
-    int cedula;
-    String nombreCliente;
-    int telefonoCliente;
-    String correo;
+    private int cedula;
+    private String nombreCliente;
+    private int telefonoCliente;
+    private String correo;
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public int getTelefonoCliente() {
+        return telefonoCliente;
+    }
+
+    public void setTelefonoCliente(int telefonoCliente) {
+        this.telefonoCliente = telefonoCliente;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
 
 }
