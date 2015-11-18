@@ -8,6 +8,7 @@
  */
 package hotellounge;
 
+import hotellounge.vista.Home;
 import java.awt.Font;
 
 /**
@@ -27,6 +28,11 @@ public class Principal {
     private final static String ruta = System.getProperty("user.home") + "\\"
 			+ nombreProyecto;
         
+    
+    public static void iniciarAplicacion(){
+        new Home();
+    }
+    
     /***** GETTERS AND SETTERS DE VARIABLES *****/
     public static int getAncho() {
         return ancho;

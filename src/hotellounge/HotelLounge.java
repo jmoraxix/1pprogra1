@@ -34,6 +34,8 @@ public class HotelLounge {
                     .setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (Exception e) {
         }
+        
+        Principal.iniciarAplicacion();
     }
 
 }
