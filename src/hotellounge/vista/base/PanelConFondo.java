@@ -32,13 +32,21 @@ public class PanelConFondo extends JPanel {
 
 	private JButton btn;
 
-	// Recibe un string con la URL de la imagen
+        /**
+         * Crea JPanel y le defina una imagen de fondo.
+         * @param urlImagen Nombre de la imagen de fondo.
+         */
 	public PanelConFondo(String urlImagen) {
 		setForeground(SystemColor.controlHighlight);
 		definirBorde(urlImagen);
 		setLayout(null);
 	}
 
+        /**
+         * Crea un panel para mostrar una imagen. 
+         * @param urlImagen Nombre de la imagen de fondo.
+         * @param isOpaque True si el panel no es transparente. False para que el panel sea transparente.
+         */
 	// Recibe un string con la URL de la imagen y si el panel es opaco o no
 	public PanelConFondo(String urlImagen, boolean isOpaque) {
 		setForeground(SystemColor.controlHighlight);
@@ -46,12 +54,15 @@ public class PanelConFondo extends JPanel {
 		setOpaque(isOpaque);
 	}
 
-	// Recibe un string con la URL de la imagen y si el panel es opaco o no y crea un
-	// botón con el título ingresado
-	public PanelConFondo(String urlImagen, boolean isOpaque, String titulo) {
+	/**
+         * Crea un panel con un boton invisible y una imagen de fondo. 
+         * @param urlImagen Nombre de la imagen de fondo.
+         * @param titulo  Título del botón.
+         */
+	public PanelConFondo(String urlImagen, String titulo) {
 		setForeground(SystemColor.controlHighlight);
 		definirBorde(urlImagen);
-		setOpaque(isOpaque);
+		setOpaque(true);
 		setLayout(new BorderLayout(0, 0));
 
 		this.btn = new JButton(titulo);
@@ -62,11 +73,15 @@ public class PanelConFondo extends JPanel {
 		add(this.btn, BorderLayout.CENTER);
 	}
 
+        /**
+         * Retorna el botón invisible del panel. Puede ser utilizado para asignarle un evento del tipo click.
+         * @return 
+         */
 	public JButton getBtn() {
 		return this.btn;
 	}
 
-	public void definirBorde(String url) {
+	private void definirBorde(String url) {
 		try {
 			URL imagen = HotelLounge.class.getResource("vista/imagenes/" + url);
 			BufferedImage img = ImageIO.read(imagen);
