@@ -8,6 +8,7 @@
  */
 package hotellounge.vista;
 
+import hotellounge.vista.base.PanelBase;
 import hotellounge.vista.base.VentanaBase;
 
 /**
@@ -17,6 +18,8 @@ import hotellounge.vista.base.VentanaBase;
 public class Home extends VentanaBase {
 
     public Home() {
+        PanelBase panel_contenido = new PanelBase();
+        setContentPane(panel_contenido);
         this.setVisible(true);
     }
     
