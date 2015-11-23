@@ -3,7 +3,6 @@
  * José David Mora Loría
  * Oscar Mauricio Gil
  * Melvin Arce Rodriguez
- * Marvin Andrei Sandi Brenes
  * Nov 11, 2015
  */
 package hotellounge.vista.base;
@@ -17,6 +16,8 @@ import java.awt.SystemColor;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -31,6 +32,7 @@ import javax.swing.border.Border;
 public class PanelConFondo extends JPanel {
 
 	private JButton btn;
+        private static final Logger logger = Logger.getLogger(PanelConFondo.class.getName());
 
         /**
          * Crea JPanel y le defina una imagen de fondo.
@@ -87,9 +89,11 @@ public class PanelConFondo extends JPanel {
 			BufferedImage img = ImageIO.read(imagen);
 			BgBorder borde = new BgBorder(img);
 			this.setBorder(borde);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		} catch (IOException ioe) {
+			logger.log(Level.SEVERE, null, ioe);
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, null, e);
+		} 
 	}
 
 }
