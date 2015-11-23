@@ -30,8 +30,8 @@ public class VentanaBase extends JFrame {
             setSize(Principal.getAncho(), Principal.getAlto());
             setTitle(Principal.getNombreProyecto());
             try {
-            Image icon = Toolkit.getDefaultToolkit().getImage(HotelLounge.class.getResource("vista/imagenes/logo_principal.png"));
-            setIconImage(icon);    
+                Image icon = Toolkit.getDefaultToolkit().getImage(HotelLounge.class.getResource("vista/imagenes/logo_principal.png"));
+                setIconImage(icon);    
             } catch (Exception e){
                 logger.log(Level.SEVERE, null, e);
             }
