@@ -3,7 +3,6 @@
  * José David Mora Loría
  * Oscar Mauricio Gil Batres
  * Jose Melvin Rodriguez Alvarado
- * Marvin Andrei Sandi Brenes
  * Nov 7, 2015
  */
 package hotellounge;

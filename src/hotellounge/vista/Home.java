@@ -3,13 +3,11 @@
  * José David Mora Loría
  * Oscar Mauricio Gil
  * Melvin Arce Rodriguez
- * Marvin Andrei Sandi Brenes
  * Nov 18, 2015
  */
 package hotellounge.vista;
 
 import hotellounge.vista.base.PanelBase;
-import hotellounge.vista.base.PanelConFondo;
 import hotellounge.vista.base.VentanaBase;
 
 /**
@@ -24,8 +22,8 @@ public class Home extends VentanaBase {
         setContentPane(panel_contenido);
         
         //Se instancian los botones y se agregan al panel base
-        PanelConFondo btn_admin = new PanelConFondo("boton_admin", "Ingresar");
-        PanelConFondo btn_reservaciones = new PanelConFondo("boton_reservaciones", "Reservaciones");
+        //PanelConFondo btn_admin = new PanelConFondo("boton_admin", "Ingresar");
+        //PanelConFondo btn_reservaciones = new PanelConFondo("boton_reservaciones", "Reservaciones");
         
         
         //Se hace visible la ventana
