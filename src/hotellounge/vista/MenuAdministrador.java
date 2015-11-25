@@ -3,7 +3,7 @@
  * José David Mora Loría
  * Oscar Mauricio Gil
  * Melvin Arce Rodriguez
- * Nov 18, 2015
+ * Nov 24, 2015
  */
 package hotellounge.vista;
 
@@ -18,9 +18,9 @@ import javax.swing.SwingConstants;
  *
  * @author jmora
  */
-public class Home extends VentanaBase {
+public class MenuAdministrador extends VentanaBase {
 
-    public Home() {
+    public MenuAdministrador() {
         //Se crea el panel del contenido 
         PanelBase panel_contenido = new PanelBase();
         setContentPane(panel_contenido);
@@ -56,5 +56,4 @@ public class Home extends VentanaBase {
         //new MisReservaciones().setVisible(true);
         this.dispose();
     }    
-    
 }

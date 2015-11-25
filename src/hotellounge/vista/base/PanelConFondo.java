@@ -20,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
@@ -79,12 +80,13 @@ public class PanelConFondo extends JPanel {
         setOpaque(true);
         setLayout(new BorderLayout(0, 0));
 
-        this.btn = new JButton(titulo);
+        this.btn = new JButton();
         this.btn.setOpaque(false);
         this.btn.setContentAreaFilled(false);
         this.btn.setBorderPainted(false);
         //this.btn.setFont(Principal.getLetratexto2());
         add(this.btn, BorderLayout.CENTER);
+        add(new JLabel(titulo), BorderLayout.SOUTH);
     }
 
     /**
