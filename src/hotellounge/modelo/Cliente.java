@@ -15,9 +15,17 @@ public class Cliente {
 
     private int cedula;
     private String nombreCliente;
-    private int telefonoCliente;
+    private String telefonoCliente;
     private String correo;
+    
+    public Cliente(int cedula, String nombreCliente, String telefonoCliente, String correo) {
+        this.cedula = cedula;
+        this.nombreCliente = nombreCliente;
+        this.telefonoCliente = telefonoCliente;
+        this.correo = correo;
+    }
 
+    
     public int getCedula() {
         return cedula;
     }
@@ -34,11 +42,11 @@ public class Cliente {
         this.nombreCliente = nombreCliente;
     }
 
-    public int getTelefonoCliente() {
+    public String getTelefonoCliente() {
         return telefonoCliente;
     }
 
-    public void setTelefonoCliente(int telefonoCliente) {
+    public void setTelefonoCliente(String telefonoCliente) {
         this.telefonoCliente = telefonoCliente;
     }
 
