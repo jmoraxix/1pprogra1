@@ -10,7 +10,7 @@ package hotellounge.vista;
 import hotellounge.Principal;
 import hotellounge.vista.base.PanelBase;
 import hotellounge.vista.base.PanelConFondo;
-import hotellounge.vista.base.VentanaBase;
+import hotellounge.vista.base.VentanaBase_usuario;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -18,13 +18,13 @@ import javax.swing.SwingConstants;
  *
  * @author jmora
  */
-public class Home extends VentanaBase {
+public class Home extends VentanaBase_usuario {
 
     public Home() {
         //Se crea el panel del contenido 
         PanelBase panel_contenido = new PanelBase();
         setContentPane(panel_contenido);
-        
+                
         //Creacion de los titulos
         JLabel titulo1 = new javax.swing.JLabel("Bienvenido a su sistema de hotel", SwingConstants.CENTER);
         titulo1.setForeground(new java.awt.Color(0, 0, 0));
@@ -46,27 +46,17 @@ public class Home extends VentanaBase {
                 goToReservaciones(evt);
             }
         });
-        //Se instancia el boton admin
-        PanelConFondo btn_admin = new hotellounge.vista.base.PanelConFondo("usuario.png", "Mis reservaciones");
-        btn_admin.setBounds(200, 100, 100, 100);
-        panel_contenido.add(btn_admin);
-        btn_admin.getBtn().addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                goToAdmin(evt);
-            }
-        });
         
         //Se hace visible la ventana
         this.setVisible(true);
     }
     
+    //Eventos de los botones
     private void goToReservaciones(java.awt.event.MouseEvent evt) {                          
         new MisReservaciones().setVisible(true);
         this.dispose();
     }    
-    private void goToAdmin(java.awt.event.MouseEvent evt) {                          
-        new MenuAdministrador().setVisible(true);
-        this.dispose();
-    }    
+                                            
+
     
 }

@@ -7,8 +7,10 @@
  */
 package hotellounge;
 
+import hotellounge.modelo.Cliente;
 import hotellounge.vista.Home;
 import java.awt.Font;
+import java.util.ArrayList;
 
 /**
  *
@@ -27,6 +29,7 @@ public class Principal {
     private final static String ruta = System.getProperty("user.home") + "\\"
 			+ nombreProyecto;
         
+    private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
     
     public static void iniciarAplicacion(){
         new Home();
@@ -57,4 +60,9 @@ public class Principal {
     public static Font getLetraTexto3() {
         return letraTexto3;
     }    
+    public static void addClientes(Cliente cliente) {
+        Principal.clientes.add(cliente);
+    }
+    
+    
 }
