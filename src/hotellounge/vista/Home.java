@@ -38,8 +38,8 @@ public class Home extends VentanaBase {
         titulo2.setBounds(Principal.getAncho()/2-250, 110, 500, 60);
                
         //Se instancia el boton misReservaciones
-        PanelConFondo btn_misReservaciones = new hotellounge.vista.base.PanelConFondo("logo_principal.png", "Mis reservaciones");
-        btn_misReservaciones.setBounds(Principal.getAncho()/2-150, Principal.getAlto()/3, 300, 300);
+        PanelConFondo btn_misReservaciones = new hotellounge.vista.base.PanelConFondo("btn_misreservaciones.png", "");
+        btn_misReservaciones.setBounds(Principal.getAncho()/2-150, Principal.getAlto()/3, 300, 125);
         panel_contenido.add(btn_misReservaciones);
         btn_misReservaciones.getBtn().addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
