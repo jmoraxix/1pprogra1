@@ -32,6 +32,7 @@ public class PanelConFondo extends JPanel {
 
     private JButton btn;
     private String fondo;
+    private String titulo;
     private static final Logger logger = Logger.getLogger(PanelConFondo.class.getName());
 
     /**
@@ -104,8 +105,20 @@ public class PanelConFondo extends JPanel {
      * @param fondo Nombre de la imagen de fondo en el paquete vista.imagenes.
      */
     public void setFondo(String fondo) {
-        this.fondo = fondo;
+        definirBorde(this.fondo = fondo);
+        setOpaque(false);
+        this.setLayout(null);
     }
+    /**
+     * Define el titulo del panel cuando tiene un botón
+     * @param titulo Titulo del botón
+     */
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+        this.add(new JLabel(titulo), BorderLayout.SOUTH);
+    }
+    
+    
     
     
     private void definirBorde(String url) {
