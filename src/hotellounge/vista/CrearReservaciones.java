@@ -10,7 +10,7 @@ package hotellounge.vista;
 import hotellounge.Principal;
 import hotellounge.vista.base.PanelBase;
 import hotellounge.vista.base.PanelConFondo;
-import hotellounge.vista.base.VentanaBase;
+import hotellounge.vista.base.VentanaBase_usuario;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
  *
  * @author cocho
  */
-public class CrearReservaciones extends VentanaBase {
+public class CrearReservaciones extends VentanaBase_usuario {
 
     //Se crea el panel del contenido 
 

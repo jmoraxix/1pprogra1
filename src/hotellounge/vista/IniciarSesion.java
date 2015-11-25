@@ -5,10 +5,11 @@
  * Melvin Arce Rodriguez
  * Nov 25, 2015
  */
-package hotellounge.vista.base;
+package hotellounge.vista;
 
 import hotellounge.Principal;
-import hotellounge.vista.MenuAdministrador;
+import hotellounge.vista.base.TransparentPasswordField;
+import hotellounge.vista.base.TransparentTextField;
 import javax.swing.JFrame;
 
 /**
@@ -47,7 +48,7 @@ public class IniciarSesion extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("hotellounge/vista/base/Bundle"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("hotellounge/vista/Bundle"); // NOI18N
         panelTitulo.setFondo(bundle.getString("IniciarSesion.panelTitulo.fondo")); // NOI18N
 
         jLabel1.setFont(Principal.getLetraTexto1());
@@ -109,11 +110,11 @@ public class IniciarSesion extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBase1, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+            .addComponent(panelBase1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBase1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+            .addComponent(panelBase1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, Short.MAX_VALUE)
         );
 
         pack();

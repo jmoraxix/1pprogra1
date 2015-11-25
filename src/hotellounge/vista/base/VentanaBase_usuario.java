@@ -7,6 +7,7 @@
  */
 package hotellounge.vista.base;
 
+import hotellounge.vista.IniciarSesion;
 import hotellounge.HotelLounge;
 import hotellounge.Principal;
 import java.awt.Image;

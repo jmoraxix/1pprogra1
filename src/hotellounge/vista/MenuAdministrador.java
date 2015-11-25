@@ -10,7 +10,7 @@ package hotellounge.vista;
 import hotellounge.Principal;
 import hotellounge.vista.base.PanelBase;
 import hotellounge.vista.base.PanelConFondo;
-import hotellounge.vista.base.VentanaBase;
+import hotellounge.vista.base.VentanaBase_admin;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
  *
  * @author jmora
  */
-public class MenuAdministrador extends VentanaBase {
+public class MenuAdministrador extends VentanaBase_admin {
 
     public MenuAdministrador() {
         //Se crea el panel del contenido 
