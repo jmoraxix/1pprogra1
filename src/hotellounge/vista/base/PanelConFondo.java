@@ -77,7 +77,7 @@ public class PanelConFondo extends JPanel {
     public PanelConFondo(String urlImagen, String titulo) {
         setForeground(SystemColor.controlHighlight);
         definirBorde(this.fondo = urlImagen);
-        setOpaque(true);
+        setOpaque(false);
         setLayout(new BorderLayout(0, 0));
 
         this.btn = new JButton();

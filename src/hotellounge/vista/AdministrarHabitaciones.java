@@ -18,9 +18,9 @@ import javax.swing.SwingConstants;
  *
  * @author jmora
  */
-public class MenuAdministrador extends VentanaBase {
+public class AdministrarHabitaciones extends VentanaBase {
 
-    public MenuAdministrador() {
+    public AdministrarHabitaciones() {
         //Se crea el panel del contenido 
         PanelBase panel_contenido = new PanelBase();
         setContentPane(panel_contenido);
@@ -37,7 +37,7 @@ public class MenuAdministrador extends VentanaBase {
         });
         
         //Creacion de los titulos
-        JLabel titulo1 = new javax.swing.JLabel("Menu Administrador", SwingConstants.CENTER);
+        JLabel titulo1 = new javax.swing.JLabel("Bienvenido a su sistema de hotel", SwingConstants.CENTER);
         titulo1.setForeground(new java.awt.Color(0, 0, 0));
         titulo1.setFont(Principal.getLetraTexto1());
         panel_contenido.add(titulo1);
@@ -51,4 +51,6 @@ public class MenuAdministrador extends VentanaBase {
         //new MisReservaciones().setVisible(true);
         this.dispose();
     }    
+    
+    
 }
