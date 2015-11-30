@@ -8,9 +8,9 @@
 package hotellounge;
 
 import hotellounge.modelo.Cliente;
+import hotellounge.modelo.Hotel;
 import hotellounge.vista.Home;
 import java.awt.Font;
-import java.util.ArrayList;
 
 /**
  *
@@ -29,10 +29,11 @@ public class Principal {
     private final static String ruta = System.getProperty("user.home") + "\\"
 			+ nombreProyecto;
         
-    private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+    private static Cliente clientes[] = new Cliente[100];
+    private static Hotel hotel = new Hotel("Hotel Lounge", 12345678, "Escazú, San José", "info@hotellounge.com");
     
     public static void iniciarAplicacion(){
-        new Home();
+        new Home().setVisible(true);
     }
     
     /***** GETTERS AND SETTERS DE VARIABLES *****/
@@ -60,9 +61,5 @@ public class Principal {
     public static Font getLetraTexto3() {
         return letraTexto3;
     }    
-    public static void addClientes(Cliente cliente) {
-        Principal.clientes.add(cliente);
-    }
-    
     
 }

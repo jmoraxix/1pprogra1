@@ -18,6 +18,13 @@ public class Reservacion {
     private int cantidadPersonas;
     private String fechaReservacion;
 
+    public Reservacion(int codigoReservacion, int dias, int cantidadPersonas, String fechaReservacion) {
+        this.codigoReservacion = codigoReservacion;
+        this.dias = dias;
+        this.cantidadPersonas = cantidadPersonas;
+        this.fechaReservacion = fechaReservacion;
+    }
+
     public int getCodigoReservacion() {
         return codigoReservacion;
     }

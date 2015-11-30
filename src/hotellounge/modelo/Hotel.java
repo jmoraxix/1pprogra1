@@ -21,6 +21,13 @@ public class Hotel {
     private String actividades;
     private String decripcionHotel;
     private String reservaciones;
+    
+    public Hotel(String nombreHotel, int numeroTelefonicoHotel, String direccionHotel, String correoHotel) {
+        this.nombreHotel = nombreHotel;
+        this.numeroTelefonicoHotel = numeroTelefonicoHotel;
+        this.direccionHotel = direccionHotel;
+        this.correoHotel = correoHotel;
+    }
 
     public String getNombreHotel() {
         return nombreHotel;

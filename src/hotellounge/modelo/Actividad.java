@@ -20,6 +20,12 @@ public class Actividad {
     private String horaFinal;
     private int precioPersona;
 
+    public Actividad(int codigoActividad, String titulo, String descripcionActividad) {
+        this.codigoActividad = codigoActividad;
+        this.titulo = titulo;
+        this.descripcionActividad = descripcionActividad;
+    }
+
     public int getCodigoActividad() {
         return codigoActividad;
     }

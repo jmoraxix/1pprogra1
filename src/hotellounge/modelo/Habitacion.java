@@ -19,6 +19,14 @@ public class Habitacion {
     private String tipo;
     private int precioNoche;
     private String descripcionHabitacion;
+    
+    public Habitacion(int codigoHabitacion, int numeroCamas, int maximoPersonas, String tipo, int precioNoche) {
+        this.codigoHabitacion = codigoHabitacion;
+        this.numeroCamas = numeroCamas;
+        this.maximoPersonas = maximoPersonas;
+        this.tipo = tipo;
+        this.precioNoche = precioNoche;
+    }
 
     public int getCodigoHabitacion() {
         return codigoHabitacion;
