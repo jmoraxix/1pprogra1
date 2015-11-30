@@ -27,7 +27,7 @@ public class VentanaBase_admin extends JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem m_ingresar;
+    private javax.swing.JMenuItem m_cerrar_session;
     private javax.swing.JMenuItem m_salir;
 
     public VentanaBase_admin() {
@@ -47,7 +47,7 @@ public class VentanaBase_admin extends JFrame {
         jMenu1 = new javax.swing.JMenu();
         m_salir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        m_ingresar = new javax.swing.JMenuItem();
+        m_cerrar_session = new javax.swing.JMenuItem();
 
         jMenu1.setText("Archivo"); 
 
@@ -63,13 +63,13 @@ public class VentanaBase_admin extends JFrame {
 
         jMenu2.setText("Adminstrar");
 
-        m_ingresar.setText("Cerrar sesion");
-        m_ingresar.addActionListener(new java.awt.event.ActionListener() {
+        m_cerrar_session.setText("Cerrar sesion");
+        m_cerrar_session.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                m_ingresarActionPerformed(evt);
+                m_cerrar_sessionActionPerformed(evt);
             }
         });
-        jMenu2.add(m_ingresar);
+        jMenu2.add(m_cerrar_session);
 
         jMenuBar1.add(jMenu2);
 
@@ -83,7 +83,7 @@ public class VentanaBase_admin extends JFrame {
         System.exit(0);
     }
 
-    private void m_ingresarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void m_cerrar_sessionActionPerformed(java.awt.event.ActionEvent evt) {
         new Home().setVisible(true);
         this.dispose();
     }
