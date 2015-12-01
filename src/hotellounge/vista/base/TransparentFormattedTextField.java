@@ -11,35 +11,38 @@ import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
  * @author jmora
  */
-public class TransparentTextField extends JTextField {
+public class TransparentFormattedTextField extends JFormattedTextField {
 
     private static final long serialVersionUID = 1959323179223226142L;
 
-    public TransparentTextField() {
+    public TransparentFormattedTextField() {
         super();
         init();
     }
 
-    public TransparentTextField(String text) {
+    public TransparentFormattedTextField(String text) {
         super(text);
         init();
     }
 
-    public TransparentTextField(int columns) {
+    public TransparentFormattedTextField(int columns) {
         super(columns);
         init();
     }
-
-    public TransparentTextField(String text, int columns) {
-        super(text, columns);
-        init();
-    }
+    
+    public TransparentFormattedTextField(MaskFormatter maskFormatter) {
+      super();  
+      maskFormatter.setPlaceholderCharacter('_');
+      setFormatterFactory(new DefaultFormatterFactory(maskFormatter));
+   }
 
     protected void init() {
         setOpaque(false);

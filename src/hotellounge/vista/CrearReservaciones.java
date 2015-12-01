@@ -7,12 +7,19 @@
  */
 package hotellounge.vista;
 
+import hotellounge.Principal;
+import hotellounge.vista.base.TransparentTextField;
+import hotellounge.vista.base.VentanaBase_usuario;
+import java.util.logging.Logger;
+
 /**
  *
  * @author jmora
  */
-public class CrearReservaciones extends javax.swing.JFrame {
+public class CrearReservaciones extends VentanaBase_usuario {
 
+    private static final Logger LOG = Logger.getLogger(CrearReservaciones.class.getName());
+ 
     /**
      * Creates new form CrearReservaciones
      */
@@ -30,63 +37,141 @@ public class CrearReservaciones extends javax.swing.JFrame {
     private void initComponents() {
 
         panelBase1 = new hotellounge.vista.base.PanelBase();
+        panel_titulo = new hotellounge.vista.base.PanelConFondo();
+        lbl_titulo = new javax.swing.JLabel();
+        panel_izq = new hotellounge.vista.base.PanelConFondo();
+        lbl_subtitulo1 = new javax.swing.JLabel();
+        lbl_nombre = new javax.swing.JLabel();
+        lbl_nombre1 = new javax.swing.JLabel();
+        lbl_nombre2 = new javax.swing.JLabel();
+        txt_correo = new TransparentTextField();
+        txt_nombre = new TransparentTextField();
+        txt_telefono = new TransparentTextField();
+        panel_izq1 = new hotellounge.vista.base.PanelConFondo();
+        lbl_subtitulo2 = new javax.swing.JLabel();
+        btn_regresar = new hotellounge.vista.base.PanelConFondo();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("hotellounge/vista/Bundle"); // NOI18N
+        panel_titulo.setFondo(bundle.getString("CrearReservaciones.panel_titulo.fondo")); // NOI18N
+
+        lbl_titulo.setFont(Principal.getLetraTexto1());
+        lbl_titulo.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_titulo.setText(bundle.getString("CrearReservaciones.lbl_titulo.text")); // NOI18N
+        panel_titulo.add(lbl_titulo);
+        lbl_titulo.setBounds(20, 10, 380, 40);
+
+        panelBase1.add(panel_titulo);
+        panel_titulo.setBounds(200, 60, 420, 60);
+
+        panel_izq.setFondo(bundle.getString("CrearReservaciones.panel_izq.fondo")); // NOI18N
+
+        lbl_subtitulo1.setFont(Principal.getLetraTexto2());
+        lbl_subtitulo1.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_subtitulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_subtitulo1.setText(bundle.getString("CrearReservaciones.lbl_subtitulo1.text")); // NOI18N
+        panel_izq.add(lbl_subtitulo1);
+        lbl_subtitulo1.setBounds(20, 20, 290, 30);
+
+        lbl_nombre.setFont(Principal.getLetraTexto3());
+        lbl_nombre.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_nombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_nombre.setText(bundle.getString("CrearReservaciones.lbl_nombre.text")); // NOI18N
+        panel_izq.add(lbl_nombre);
+        lbl_nombre.setBounds(20, 120, 80, 30);
+
+        lbl_nombre1.setFont(Principal.getLetraTexto3());
+        lbl_nombre1.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_nombre1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_nombre1.setText(bundle.getString("CrearReservaciones.lbl_nombre1.text")); // NOI18N
+        panel_izq.add(lbl_nombre1);
+        lbl_nombre1.setBounds(20, 60, 80, 30);
+
+        lbl_nombre2.setFont(Principal.getLetraTexto3());
+        lbl_nombre2.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_nombre2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_nombre2.setText(bundle.getString("CrearReservaciones.lbl_nombre2.text")); // NOI18N
+        panel_izq.add(lbl_nombre2);
+        lbl_nombre2.setBounds(20, 90, 80, 30);
+
+        txt_correo.setText(bundle.getString("CrearReservaciones.txt_correo.text")); // NOI18N
+        txt_correo.setToolTipText(bundle.getString("CrearReservaciones.txt_correo.toolTipText")); // NOI18N
+        panel_izq.add(txt_correo);
+        txt_correo.setBounds(110, 120, 200, 30);
+
+        txt_nombre.setText(bundle.getString("CrearReservaciones.txt_nombre.text")); // NOI18N
+        txt_nombre.setToolTipText(bundle.getString("CrearReservaciones.txt_nombre.toolTipText")); // NOI18N
+        panel_izq.add(txt_nombre);
+        txt_nombre.setBounds(110, 60, 200, 30);
+
+        txt_telefono.setText(bundle.getString("CrearReservaciones.txt_telefono.text")); // NOI18N
+        txt_telefono.setToolTipText(bundle.getString("CrearReservaciones.txt_telefono.toolTipText")); // NOI18N
+        panel_izq.add(txt_telefono);
+        txt_telefono.setBounds(110, 90, 200, 30);
+
+        panelBase1.add(panel_izq);
+        panel_izq.setBounds(60, 160, 330, 350);
+
+        panel_izq1.setFondo(bundle.getString("CrearReservaciones.panel_izq1.fondo")); // NOI18N
+
+        lbl_subtitulo2.setFont(Principal.getLetraTexto2());
+        lbl_subtitulo2.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_subtitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_subtitulo2.setText(bundle.getString("CrearReservaciones.lbl_subtitulo2.text")); // NOI18N
+        panel_izq1.add(lbl_subtitulo2);
+        lbl_subtitulo2.setBounds(20, 20, 290, 30);
+
+        panelBase1.add(panel_izq1);
+        panel_izq1.setBounds(430, 160, 330, 350);
+
+        btn_regresar.setFondo(bundle.getString("CrearReservaciones.btn_regresar.fondo")); // NOI18N
+        btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseClicked(evt);
+            }
+        });
+        panelBase1.add(btn_regresar);
+        btn_regresar.setBounds(40, 70, 80, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelBase1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addComponent(panelBase1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelBase1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addComponent(panelBase1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CrearReservaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CrearReservaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CrearReservaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CrearReservaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CrearReservaciones().setVisible(true);
-            }
-        });
-    }
+    private void btn_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseClicked
+        new MisReservaciones().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_regresarMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private hotellounge.vista.base.PanelConFondo btn_regresar;
+    private javax.swing.JLabel lbl_nombre;
+    private javax.swing.JLabel lbl_nombre1;
+    private javax.swing.JLabel lbl_nombre2;
+    private javax.swing.JLabel lbl_subtitulo1;
+    private javax.swing.JLabel lbl_subtitulo2;
+    private javax.swing.JLabel lbl_titulo;
     private hotellounge.vista.base.PanelBase panelBase1;
+    private hotellounge.vista.base.PanelConFondo panel_izq;
+    private hotellounge.vista.base.PanelConFondo panel_izq1;
+    private hotellounge.vista.base.PanelConFondo panel_titulo;
+    private javax.swing.JTextField txt_correo;
+    private javax.swing.JTextField txt_nombre;
+    private javax.swing.JTextField txt_telefono;
     // End of variables declaration//GEN-END:variables
 }

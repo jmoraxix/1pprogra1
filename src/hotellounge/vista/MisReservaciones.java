@@ -8,12 +8,13 @@
 package hotellounge.vista;
 
 import hotellounge.Principal;
+import hotellounge.vista.base.VentanaBase_usuario;
 
 /**
  *
  * @author jmora
  */
-public class MisReservaciones extends javax.swing.JFrame {
+public class MisReservaciones extends VentanaBase_usuario {
 
     /**
      * Creates new form MisReservaciones
@@ -38,6 +39,7 @@ public class MisReservaciones extends javax.swing.JFrame {
         panelConFondo2 = new hotellounge.vista.base.PanelConFondo();
         panelConFondo1 = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
+        btn_regresar = new hotellounge.vista.base.PanelConFondo();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +61,11 @@ public class MisReservaciones extends javax.swing.JFrame {
         panel_info.setBounds(80, 190, 270, 350);
 
         panelConFondo2.setFondo(bundle.getString("MisReservaciones.panelConFondo2.fondo")); // NOI18N
+        panelConFondo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelConFondo2MouseClicked(evt);
+            }
+        });
 
         panelConFondo1.setFondo(bundle.getString("MisReservaciones.panelConFondo1.fondo")); // NOI18N
         panelConFondo2.add(panelConFondo1);
@@ -73,6 +80,15 @@ public class MisReservaciones extends javax.swing.JFrame {
 
         panelBase1.add(panelConFondo2);
         panelConFondo2.setBounds(480, 200, 180, 160);
+
+        btn_regresar.setFondo(bundle.getString("MisReservaciones.btn_regresar.fondo")); // NOI18N
+        btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseClicked(evt);
+            }
+        });
+        panelBase1.add(btn_regresar);
+        btn_regresar.setBounds(40, 70, 80, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,42 +108,18 @@ public class MisReservaciones extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MisReservaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MisReservaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MisReservaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MisReservaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btn_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseClicked
+        new Home().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_regresarMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MisReservaciones().setVisible(true);
-            }
-        });
-    }
+    private void panelConFondo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelConFondo2MouseClicked
+        new CrearReservaciones().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_panelConFondo2MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private hotellounge.vista.base.PanelConFondo btn_regresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_titulo1;
     private hotellounge.vista.base.PanelBase panelBase1;
