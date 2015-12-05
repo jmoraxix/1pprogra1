@@ -32,15 +32,46 @@ public class ConsultaDelAdministrador extends VentanaBase_usuario {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        panelBase1 = new hotellounge.vista.base.PanelBase();
+        panel_titulo = new hotellounge.vista.base.PanelConFondo();
+        lbl_titulo = new javax.swing.JLabel();
+        panel_izq = new hotellounge.vista.base.PanelConFondo();
+        btn_regresar = new hotellounge.vista.base.PanelConFondo();
+
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("hotellounge/vista/Bundle"); // NOI18N
+        panel_titulo.setFondo(bundle.getString("CrearReservaciones.panel_titulo.fondo")); // NOI18N
+
+        lbl_titulo.setFont(Principal.getLetraTexto1());
+        lbl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_titulo.setText(bundle.getString("CrearReservaciones.lbl_titulo.text")); // NOI18N
+        panel_titulo.add(lbl_titulo);
+        lbl_titulo.setBounds(20, 10, 380, 40);
+
+        panelBase1.add(panel_titulo);
+        panel_titulo.setBounds(200, 60, 420, 60);
+
+        panel_izq.setFondo(bundle.getString("CrearReservaciones.panel_izq.fondo")); // NOI18N
+        panelBase1.add(panel_izq);
+        panel_izq.setBounds(110, 140, 610, 350);
+
+        btn_regresar.setFondo(bundle.getString("CrearReservaciones.btn_regresar.fondo")); // NOI18N
+        btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseClicked(evt);
+            }
+        });
+        panelBase1.add(btn_regresar);
+        btn_regresar.setBounds(40, 70, 80, 40);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 978, Short.MAX_VALUE)
+            .addComponent(panelBase1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 635, Short.MAX_VALUE)
+            .addComponent(panelBase1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -48,7 +79,17 @@ public class ConsultaDelAdministrador extends VentanaBase_usuario {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_regresar2MouseClicked
 
+    private void btn_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseClicked
+        new MisReservaciones().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_regresarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private hotellounge.vista.base.PanelConFondo btn_regresar;
+    private javax.swing.JLabel lbl_titulo;
+    private hotellounge.vista.base.PanelBase panelBase1;
+    private hotellounge.vista.base.PanelConFondo panel_izq;
+    private hotellounge.vista.base.PanelConFondo panel_titulo;
     // End of variables declaration//GEN-END:variables
 }
