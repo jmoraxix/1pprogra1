@@ -8,12 +8,13 @@
 package hotellounge.vista;
 
 import hotellounge.Principal;
+import hotellounge.vista.base.VentanaBase_usuario;
 
 /**
  *
  * @author cocho
  */
-public class Consultar extends javax.swing.JPanel {
+public class Consultar extends VentanaBase_usuario {
 
     /**
      * Creates new form Consultar

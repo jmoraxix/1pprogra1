@@ -7,11 +7,13 @@
  */
 package hotellounge.vista;
 
+import hotellounge.vista.base.VentanaBase_usuario;
+
 /**
  *
  * @author cocho
  */
-public class ArregloDeHabitaciones extends javax.swing.JPanel {
+public class ArregloDeHabitaciones extends VentanaBase_usuario {
 
     /**
      * Creates new form ArregloDeHabitaciones
