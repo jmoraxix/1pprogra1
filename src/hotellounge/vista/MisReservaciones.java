@@ -40,6 +40,9 @@ public class MisReservaciones extends VentanaBase_usuario {
         panelConFondo1 = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
+        panelConFondo3 = new hotellounge.vista.base.PanelConFondo();
+        panelConFondo4 = new hotellounge.vista.base.PanelConFondo();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,7 +50,6 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_titulo.setFondo(bundle.getString("MisReservaciones.panel_titulo.fondo")); // NOI18N
 
         lbl_titulo1.setFont(Principal.getLetraTexto1());
-        lbl_titulo1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_titulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_titulo1.setText(bundle.getString("MisReservaciones.lbl_titulo1.text_1")); // NOI18N
         panel_titulo.add(lbl_titulo1);
@@ -69,17 +71,16 @@ public class MisReservaciones extends VentanaBase_usuario {
 
         panelConFondo1.setFondo(bundle.getString("MisReservaciones.panelConFondo1.fondo")); // NOI18N
         panelConFondo2.add(panelConFondo1);
-        panelConFondo1.setBounds(20, 20, 140, 80);
+        panelConFondo1.setBounds(40, 20, 120, 80);
 
         jLabel1.setFont(Principal.getLetraTexto3());
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText(bundle.getString("MisReservaciones.jLabel1.text_1")); // NOI18N
         panelConFondo2.add(jLabel1);
         jLabel1.setBounds(20, 110, 140, 30);
 
         panelBase1.add(panelConFondo2);
-        panelConFondo2.setBounds(480, 200, 180, 160);
+        panelConFondo2.setBounds(480, 380, 180, 160);
 
         btn_regresar.setFondo(bundle.getString("MisReservaciones.btn_regresar.fondo")); // NOI18N
         btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,6 +90,27 @@ public class MisReservaciones extends VentanaBase_usuario {
         });
         panelBase1.add(btn_regresar);
         btn_regresar.setBounds(40, 70, 80, 40);
+
+        panelConFondo3.setFondo(bundle.getString("MisReservaciones.panelConFondo3.fondo")); // NOI18N
+        panelConFondo3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelConFondo3MouseClicked(evt);
+            }
+        });
+
+        panelConFondo4.setFondo(bundle.getString("MisReservaciones.panelConFondo4.fondo")); // NOI18N
+        panelConFondo4.setMinimumSize(new java.awt.Dimension(120, 80));
+        panelConFondo3.add(panelConFondo4);
+        panelConFondo4.setBounds(30, 20, 120, 80);
+
+        jLabel2.setFont(Principal.getLetraTexto3());
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText(bundle.getString("MisReservaciones.jLabel2.text_1")); // NOI18N
+        panelConFondo3.add(jLabel2);
+        jLabel2.setBounds(20, 110, 140, 30);
+
+        panelBase1.add(panelConFondo3);
+        panelConFondo3.setBounds(480, 200, 180, 160);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,17 +136,28 @@ public class MisReservaciones extends VentanaBase_usuario {
     }//GEN-LAST:event_btn_regresarMouseClicked
 
     private void panelConFondo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelConFondo2MouseClicked
-        new CrearReservaciones().setVisible(true);
+        
+        
+        new EditarReservacion().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_panelConFondo2MouseClicked
+
+    private void panelConFondo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelConFondo3MouseClicked
+        // TODO add your handling code here:
+        new CrearReservaciones().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_panelConFondo3MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo btn_regresar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbl_titulo1;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panelConFondo1;
     private hotellounge.vista.base.PanelConFondo panelConFondo2;
+    private hotellounge.vista.base.PanelConFondo panelConFondo3;
+    private hotellounge.vista.base.PanelConFondo panelConFondo4;
     private hotellounge.vista.base.PanelConFondo panel_info;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
     // End of variables declaration//GEN-END:variables
