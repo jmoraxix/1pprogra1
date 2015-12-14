@@ -58,6 +58,8 @@ public class CrearReservaciones extends VentanaBase_usuario {
         lbl_nombre6 = new javax.swing.JLabel();
         fecha_reservacion = new datechooser.beans.DateChooserCombo();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
+        jPanel1 = new javax.swing.JPanel();
+        lbl_nombre7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,7 +67,6 @@ public class CrearReservaciones extends VentanaBase_usuario {
         panel_titulo.setFondo(bundle.getString("CrearReservaciones.panel_titulo.fondo")); // NOI18N
 
         lbl_titulo.setFont(Principal.getLetraTexto1());
-        lbl_titulo.setForeground(new java.awt.Color(0, 0, 0));
         lbl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_titulo.setText(bundle.getString("CrearReservaciones.lbl_titulo.text")); // NOI18N
         panel_titulo.add(lbl_titulo);
@@ -77,28 +78,24 @@ public class CrearReservaciones extends VentanaBase_usuario {
         panel_izq.setFondo(bundle.getString("CrearReservaciones.panel_izq.fondo")); // NOI18N
 
         lbl_subtitulo1.setFont(Principal.getLetraTexto2());
-        lbl_subtitulo1.setForeground(new java.awt.Color(0, 0, 0));
         lbl_subtitulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_subtitulo1.setText(bundle.getString("CrearReservaciones.lbl_subtitulo1.text")); // NOI18N
         panel_izq.add(lbl_subtitulo1);
         lbl_subtitulo1.setBounds(20, 20, 290, 30);
 
         lbl_nombre.setFont(Principal.getLetraTexto3());
-        lbl_nombre.setForeground(new java.awt.Color(0, 0, 0));
         lbl_nombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_nombre.setText(bundle.getString("CrearReservaciones.lbl_nombre.text")); // NOI18N
         panel_izq.add(lbl_nombre);
         lbl_nombre.setBounds(20, 190, 80, 30);
 
         lbl_cedula.setFont(Principal.getLetraTexto3());
-        lbl_cedula.setForeground(new java.awt.Color(0, 0, 0));
         lbl_cedula.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_cedula.setText(bundle.getString("CrearReservaciones.lbl_cedula.text")); // NOI18N
         panel_izq.add(lbl_cedula);
         lbl_cedula.setBounds(20, 70, 80, 30);
 
         lbl_nombre2.setFont(Principal.getLetraTexto3());
-        lbl_nombre2.setForeground(new java.awt.Color(0, 0, 0));
         lbl_nombre2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_nombre2.setText(bundle.getString("CrearReservaciones.lbl_nombre2.text")); // NOI18N
         panel_izq.add(lbl_nombre2);
@@ -120,7 +117,6 @@ public class CrearReservaciones extends VentanaBase_usuario {
         txt_telefono.setBounds(110, 150, 200, 30);
 
         lbl_nombre3.setFont(Principal.getLetraTexto3());
-        lbl_nombre3.setForeground(new java.awt.Color(0, 0, 0));
         lbl_nombre3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_nombre3.setText(bundle.getString("CrearReservaciones.lbl_nombre3.text")); // NOI18N
         panel_izq.add(lbl_nombre3);
@@ -137,14 +133,12 @@ public class CrearReservaciones extends VentanaBase_usuario {
         panel_izq1.setFondo(bundle.getString("CrearReservaciones.panel_izq1.fondo")); // NOI18N
 
         lbl_subtitulo2.setFont(Principal.getLetraTexto2());
-        lbl_subtitulo2.setForeground(new java.awt.Color(0, 0, 0));
         lbl_subtitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_subtitulo2.setText(bundle.getString("CrearReservaciones.lbl_subtitulo2.text")); // NOI18N
         panel_izq1.add(lbl_subtitulo2);
         lbl_subtitulo2.setBounds(20, 20, 290, 30);
 
         lbl_nombre4.setFont(Principal.getLetraTexto3());
-        lbl_nombre4.setForeground(new java.awt.Color(0, 0, 0));
         lbl_nombre4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_nombre4.setText(bundle.getString("CrearReservaciones.lbl_nombre4.text")); // NOI18N
         panel_izq1.add(lbl_nombre4);
@@ -153,7 +147,6 @@ public class CrearReservaciones extends VentanaBase_usuario {
         cmb_tipoHabitacion.setBounds(40, 90, 250, 30);
 
         lbl_fechaReservacion.setFont(Principal.getLetraTexto3());
-        lbl_fechaReservacion.setForeground(new java.awt.Color(0, 0, 0));
         lbl_fechaReservacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_fechaReservacion.setText(bundle.getString("CrearReservaciones.lbl_fechaReservacion.text")); // NOI18N
         panel_izq1.add(lbl_fechaReservacion);
@@ -162,7 +155,6 @@ public class CrearReservaciones extends VentanaBase_usuario {
         cmb_cantidadHabitaciones.setBounds(40, 150, 250, 30);
 
         lbl_nombre6.setFont(Principal.getLetraTexto3());
-        lbl_nombre6.setForeground(new java.awt.Color(0, 0, 0));
         lbl_nombre6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_nombre6.setText(bundle.getString("CrearReservaciones.lbl_nombre6.text")); // NOI18N
         panel_izq1.add(lbl_nombre6);
@@ -181,6 +173,30 @@ public class CrearReservaciones extends VentanaBase_usuario {
         });
         panelBase1.add(btn_regresar);
         btn_regresar.setBounds(40, 70, 80, 40);
+
+        lbl_nombre7.setFont(Principal.getLetraTexto3());
+        lbl_nombre7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_nombre7.setText(bundle.getString("CrearReservaciones.lbl_nombre7.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lbl_nombre7)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbl_nombre7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        panelBase1.add(jPanel1);
+        jPanel1.setBounds(100, 520, 100, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,6 +226,7 @@ public class CrearReservaciones extends VentanaBase_usuario {
     private hotellounge.vista.base.TransparentComboBox cmb_cantidadHabitaciones;
     private hotellounge.vista.base.TransparentComboBox cmb_tipoHabitacion;
     private datechooser.beans.DateChooserCombo fecha_reservacion;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_cedula;
     private javax.swing.JLabel lbl_fechaReservacion;
     private javax.swing.JLabel lbl_nombre;
@@ -217,6 +234,7 @@ public class CrearReservaciones extends VentanaBase_usuario {
     private javax.swing.JLabel lbl_nombre3;
     private javax.swing.JLabel lbl_nombre4;
     private javax.swing.JLabel lbl_nombre6;
+    private javax.swing.JLabel lbl_nombre7;
     private javax.swing.JLabel lbl_subtitulo1;
     private javax.swing.JLabel lbl_subtitulo2;
     private javax.swing.JLabel lbl_titulo;

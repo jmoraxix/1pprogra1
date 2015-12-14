@@ -35,6 +35,11 @@ public class MenuAdministrador extends VentanaBase_admin {
         panelBase1 = new hotellounge.vista.base.PanelBase();
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
+        panel_titulo1 = new hotellounge.vista.base.PanelConFondo();
+        jLabel2 = new javax.swing.JLabel();
+        panelConFondo2 = new hotellounge.vista.base.PanelConFondo();
+        panelConFondo1 = new hotellounge.vista.base.PanelConFondo();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,14 +47,44 @@ public class MenuAdministrador extends VentanaBase_admin {
         panel_titulo.setFondo(bundle.getString("MenuAdministrador.panel_titulo.fondo")); // NOI18N
 
         jLabel1.setFont(Principal.getLetraTexto1());
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText(bundle.getString("MenuAdministrador.jLabel1.text")); // NOI18N
         panel_titulo.add(jLabel1);
-        jLabel1.setBounds(20, 10, 390, 60);
+        jLabel1.setBounds(-10, 20, 200, 60);
 
         panelBase1.add(panel_titulo);
-        panel_titulo.setBounds(200, 60, 430, 80);
+        panel_titulo.setBounds(70, 230, 170, 100);
+
+        panel_titulo1.setFondo(bundle.getString("MenuAdministrador.panel_titulo1.fondo")); // NOI18N
+
+        jLabel2.setFont(Principal.getLetraTexto1());
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText(bundle.getString("MenuAdministrador.jLabel2.text")); // NOI18N
+        panel_titulo1.add(jLabel2);
+        jLabel2.setBounds(20, 10, 390, 60);
+
+        panelBase1.add(panel_titulo1);
+        panel_titulo1.setBounds(200, 60, 430, 80);
+
+        panelConFondo2.setFondo(bundle.getString("MenuAdministrador.panelConFondo2.fondo")); // NOI18N
+        panelConFondo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelConFondo2MouseClicked(evt);
+            }
+        });
+
+        panelConFondo1.setFondo(bundle.getString("MenuAdministrador.panelConFondo1.fondo")); // NOI18N
+        panelConFondo2.add(panelConFondo1);
+        panelConFondo1.setBounds(40, 20, 120, 80);
+
+        jLabel3.setFont(Principal.getLetraTexto3());
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText(bundle.getString("MenuAdministrador.jLabel3.text")); // NOI18N
+        panelConFondo2.add(jLabel3);
+        jLabel3.setBounds(20, 110, 140, 30);
+
+        panelBase1.add(panelConFondo2);
+        panelConFondo2.setBounds(470, 220, 180, 160);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,10 +100,21 @@ public class MenuAdministrador extends VentanaBase_admin {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void panelConFondo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelConFondo2MouseClicked
+
+        new EditarReservacion().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_panelConFondo2MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private hotellounge.vista.base.PanelBase panelBase1;
+    private hotellounge.vista.base.PanelConFondo panelConFondo1;
+    private hotellounge.vista.base.PanelConFondo panelConFondo2;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
+    private hotellounge.vista.base.PanelConFondo panel_titulo1;
     // End of variables declaration//GEN-END:variables
 }

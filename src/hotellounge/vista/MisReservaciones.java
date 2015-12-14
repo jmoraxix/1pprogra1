@@ -36,13 +36,15 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
         lbl_titulo1 = new javax.swing.JLabel();
         panel_info = new hotellounge.vista.base.PanelConFondo();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         panelConFondo2 = new hotellounge.vista.base.PanelConFondo();
         panelConFondo1 = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
         panelConFondo3 = new hotellounge.vista.base.PanelConFondo();
         panelConFondo4 = new hotellounge.vista.base.PanelConFondo();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +61,17 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_titulo.setBounds(210, 60, 400, 70);
 
         panel_info.setFondo(bundle.getString("MisReservaciones.panel_info.fondo")); // NOI18N
+
+        jLabel2.setFont(Principal.getLetraTexto3());
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText(bundle.getString("MisReservaciones.jLabel2.text_1")); // NOI18N
+        panel_info.add(jLabel2);
+        jLabel2.setBounds(60, 30, 140, 30);
+
+        jLabel4.setText(bundle.getString("MisReservaciones.jLabel4.text")); // NOI18N
+        panel_info.add(jLabel4);
+        jLabel4.setBounds(20, 80, 250, 60);
+
         panelBase1.add(panel_info);
         panel_info.setBounds(80, 190, 270, 350);
 
@@ -103,11 +116,11 @@ public class MisReservaciones extends VentanaBase_usuario {
         panelConFondo3.add(panelConFondo4);
         panelConFondo4.setBounds(30, 20, 120, 80);
 
-        jLabel2.setFont(Principal.getLetraTexto3());
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText(bundle.getString("MisReservaciones.jLabel2.text_1")); // NOI18N
-        panelConFondo3.add(jLabel2);
-        jLabel2.setBounds(20, 110, 140, 30);
+        jLabel3.setFont(Principal.getLetraTexto3());
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText(bundle.getString("MisReservaciones.jLabel3.text")); // NOI18N
+        panelConFondo3.add(jLabel3);
+        jLabel3.setBounds(20, 110, 140, 30);
 
         panelBase1.add(panelConFondo3);
         panelConFondo3.setBounds(480, 200, 180, 160);
@@ -152,6 +165,8 @@ public class MisReservaciones extends VentanaBase_usuario {
     private hotellounge.vista.base.PanelConFondo btn_regresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lbl_titulo1;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panelConFondo1;
