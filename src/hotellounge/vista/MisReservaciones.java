@@ -135,12 +135,13 @@ public class MisReservaciones extends VentanaBase_usuario {
     }//GEN-LAST:event_btn_regresarMouseClicked
 
     private void ConsultarReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarReservacionMouseClicked
-        new CrearReservaciones().setVisible(true);
-        this.dispose();
+     
     }//GEN-LAST:event_ConsultarReservacionMouseClicked
 
     private void CrearReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearReservacionMouseClicked
         // TODO add your handling code here:
+        new CrearReservaciones().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_CrearReservacionMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
