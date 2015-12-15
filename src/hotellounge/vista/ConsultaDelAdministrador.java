@@ -36,6 +36,8 @@ public class ConsultaDelAdministrador extends VentanaBase_usuario {
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
         lbl_titulo = new javax.swing.JLabel();
         panel_izq = new hotellounge.vista.base.PanelConFondo();
+        btn_ingresar = new javax.swing.JButton();
+        btn_ingresar1 = new javax.swing.JButton();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("hotellounge/vista/Bundle"); // NOI18N
@@ -51,8 +53,28 @@ public class ConsultaDelAdministrador extends VentanaBase_usuario {
         panel_titulo.setBounds(200, 60, 420, 60);
 
         panel_izq.setFondo(bundle.getString("CrearReservaciones.panel_izq.fondo")); // NOI18N
+
+        btn_ingresar.setText(bundle.getString("IniciarSesion.btn_ingresar.text")); // NOI18N
+        btn_ingresar.setActionCommand("Mostrar");
+        btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresarActionPerformed(evt);
+            }
+        });
+        panel_izq.add(btn_ingresar);
+        btn_ingresar.setBounds(70, 60, 100, 40);
+
+        btn_ingresar1.setText(bundle.getString("IniciarSesion.btn_ingresar.text")); // NOI18N
+        btn_ingresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresar1ActionPerformed(evt);
+            }
+        });
+        panel_izq.add(btn_ingresar1);
+        btn_ingresar1.setBounds(70, 140, 100, 40);
+
         panelBase1.add(panel_izq);
-        panel_izq.setBounds(110, 140, 610, 350);
+        panel_izq.setBounds(100, 140, 630, 360);
 
         btn_regresar.setFondo(bundle.getString("CrearReservaciones.btn_regresar.fondo")); // NOI18N
         btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -84,8 +106,28 @@ public class ConsultaDelAdministrador extends VentanaBase_usuario {
         this.dispose();
     }//GEN-LAST:event_btn_regresarMouseClicked
 
+    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
+        if(this.txt_usuario.getText().equals("admin") && new String(this.txt_password.getPassword()).equals("123")){
+            new MenuAdministrador().setVisible(true);
+            this.dispose();
+            this.getParent().setVisible(false);
+        } else
+        mostrar_error("Usuario o contraseña erróneos");
+    }//GEN-LAST:event_btn_ingresarActionPerformed
+
+    private void btn_ingresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresar1ActionPerformed
+        if(this.txt_usuario.getText().equals("admin") && new String(this.txt_password.getPassword()).equals("123")){
+            new MenuAdministrador().setVisible(true);
+            this.dispose();
+            this.getParent().setVisible(false);
+        } else
+        mostrar_error("Usuario o contraseña erróneos");
+    }//GEN-LAST:event_btn_ingresar1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_ingresar;
+    private javax.swing.JButton btn_ingresar1;
     private hotellounge.vista.base.PanelConFondo btn_regresar;
     private javax.swing.JLabel lbl_titulo;
     private hotellounge.vista.base.PanelBase panelBase1;

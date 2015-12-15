@@ -35,6 +35,9 @@ public class MenuAdministrador extends VentanaBase_admin {
         panelBase1 = new hotellounge.vista.base.PanelBase();
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
+        panel_info = new hotellounge.vista.base.PanelConFondo();
+        btn_cancelar = new javax.swing.JButton();
+        btn_cancelar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,7 +45,6 @@ public class MenuAdministrador extends VentanaBase_admin {
         panel_titulo.setFondo(bundle.getString("MenuAdministrador.panel_titulo.fondo")); // NOI18N
 
         jLabel1.setFont(Principal.getLetraTexto1());
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText(bundle.getString("MenuAdministrador.jLabel1.text")); // NOI18N
         panel_titulo.add(jLabel1);
@@ -50,6 +52,29 @@ public class MenuAdministrador extends VentanaBase_admin {
 
         panelBase1.add(panel_titulo);
         panel_titulo.setBounds(200, 60, 430, 80);
+
+        panel_info.setFondo(bundle.getString("MenuAdministrador.panel_info.fondo")); // NOI18N
+
+        btn_cancelar.setText(bundle.getString("MenuAdministrador.btn_cancelar.text")); // NOI18N
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
+        panel_info.add(btn_cancelar);
+        btn_cancelar.setBounds(90, 120, 100, 40);
+
+        btn_cancelar1.setText(bundle.getString("MenuAdministrador.btn_cancelar1.text")); // NOI18N
+        btn_cancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelar1ActionPerformed(evt);
+            }
+        });
+        panel_info.add(btn_cancelar1);
+        btn_cancelar1.setBounds(430, 120, 100, 40);
+
+        panelBase1.add(panel_info);
+        panel_info.setBounds(80, 190, 640, 350);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,10 +90,21 @@ public class MenuAdministrador extends VentanaBase_admin {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void btn_cancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelar1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_cancelar1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cancelar;
+    private javax.swing.JButton btn_cancelar1;
     private javax.swing.JLabel jLabel1;
     private hotellounge.vista.base.PanelBase panelBase1;
+    private hotellounge.vista.base.PanelConFondo panel_info;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
     // End of variables declaration//GEN-END:variables
 }
