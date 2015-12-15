@@ -36,12 +36,13 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
         lbl_titulo1 = new javax.swing.JLabel();
         panel_info = new hotellounge.vista.base.PanelConFondo();
-        btn_cancelar = new javax.swing.JButton();
-        btn_cancelar1 = new javax.swing.JButton();
         panelConFondo2 = new hotellounge.vista.base.PanelConFondo();
         panelConFondo1 = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
+        panelConFondo3 = new hotellounge.vista.base.PanelConFondo();
+        panelConFondo4 = new hotellounge.vista.base.PanelConFondo();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,25 +59,6 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_titulo.setBounds(210, 60, 400, 70);
 
         panel_info.setFondo(bundle.getString("MisReservaciones.panel_info.fondo")); // NOI18N
-
-        btn_cancelar.setText(bundle.getString("MisReservaciones.btn_cancelar.text")); // NOI18N
-        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelarActionPerformed(evt);
-            }
-        });
-        panel_info.add(btn_cancelar);
-        btn_cancelar.setBounds(50, 50, 100, 40);
-
-        btn_cancelar1.setText(bundle.getString("MisReservaciones.btn_cancelar1.text")); // NOI18N
-        btn_cancelar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelar1ActionPerformed(evt);
-            }
-        });
-        panel_info.add(btn_cancelar1);
-        btn_cancelar1.setBounds(50, 100, 100, 40);
-
         panelBase1.add(panel_info);
         panel_info.setBounds(80, 190, 270, 350);
 
@@ -98,7 +80,7 @@ public class MisReservaciones extends VentanaBase_usuario {
         jLabel1.setBounds(20, 110, 140, 30);
 
         panelBase1.add(panelConFondo2);
-        panelConFondo2.setBounds(480, 200, 180, 160);
+        panelConFondo2.setBounds(480, 360, 180, 160);
 
         btn_regresar.setFondo(bundle.getString("MisReservaciones.btn_regresar.fondo")); // NOI18N
         btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,6 +90,26 @@ public class MisReservaciones extends VentanaBase_usuario {
         });
         panelBase1.add(btn_regresar);
         btn_regresar.setBounds(40, 70, 80, 40);
+
+        panelConFondo3.setFondo(bundle.getString("MisReservaciones.panelConFondo3.fondo")); // NOI18N
+        panelConFondo3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelConFondo3MouseClicked(evt);
+            }
+        });
+
+        panelConFondo4.setFondo(bundle.getString("MisReservaciones.panelConFondo4.fondo")); // NOI18N
+        panelConFondo3.add(panelConFondo4);
+        panelConFondo4.setBounds(20, 20, 140, 80);
+
+        jLabel2.setFont(Principal.getLetraTexto3());
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText(bundle.getString("MisReservaciones.jLabel2.text_1")); // NOI18N
+        panelConFondo3.add(jLabel2);
+        jLabel2.setBounds(20, 110, 140, 30);
+
+        panelBase1.add(panelConFondo3);
+        panelConFondo3.setBounds(480, 200, 180, 160);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,23 +139,20 @@ public class MisReservaciones extends VentanaBase_usuario {
         this.dispose();
     }//GEN-LAST:event_panelConFondo2MouseClicked
 
-    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btn_cancelarActionPerformed
-
-    private void btn_cancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelar1ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btn_cancelar1ActionPerformed
+    private void panelConFondo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelConFondo3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelConFondo3MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cancelar;
-    private javax.swing.JButton btn_cancelar1;
     private hotellounge.vista.base.PanelConFondo btn_regresar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbl_titulo1;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panelConFondo1;
     private hotellounge.vista.base.PanelConFondo panelConFondo2;
+    private hotellounge.vista.base.PanelConFondo panelConFondo3;
+    private hotellounge.vista.base.PanelConFondo panelConFondo4;
     private hotellounge.vista.base.PanelConFondo panel_info;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
     // End of variables declaration//GEN-END:variables
