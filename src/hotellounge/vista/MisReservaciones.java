@@ -77,7 +77,7 @@ public class MisReservaciones extends VentanaBase_usuario {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText(bundle.getString("MisReservaciones.jLabel1.text_1")); // NOI18N
         panelConFondo2.add(jLabel1);
-        jLabel1.setBounds(20, 110, 140, 30);
+        jLabel1.setBounds(10, 110, 170, 30);
 
         panelBase1.add(panelConFondo2);
         panelConFondo2.setBounds(480, 360, 180, 160);
