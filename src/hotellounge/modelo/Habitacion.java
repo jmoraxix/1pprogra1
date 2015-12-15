@@ -13,21 +13,26 @@ package hotellounge.modelo;
  */
 public class Habitacion {
 
+    //Variables de clase
     private int codigoHabitacion;
     private int numeroCamas;
     private int maximoPersonas;
     private String tipo;
     private int precioNoche;
     private String descripcionHabitacion;
+    private static int n_habitaciones = 10;
     
-    public Habitacion(int codigoHabitacion, int numeroCamas, int maximoPersonas, String tipo, int precioNoche) {
+    //Constructor
+    public Habitacion(int codigoHabitacion, int numeroCamas, int maximoPersonas, String tipo, int precioNoche, String descripcionHabitacion) {
         this.codigoHabitacion = codigoHabitacion;
         this.numeroCamas = numeroCamas;
         this.maximoPersonas = maximoPersonas;
         this.tipo = tipo;
         this.precioNoche = precioNoche;
+        this.descripcionHabitacion = descripcionHabitacion;
     }
 
+    //Getters & setters
     public int getCodigoHabitacion() {
         return codigoHabitacion;
     }

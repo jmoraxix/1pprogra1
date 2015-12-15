@@ -13,15 +13,14 @@ package hotellounge.modelo;
  */
 public class Hotel {
 
+    //Variables de clase
     private String nombreHotel;
     private int numeroTelefonicoHotel;
     private String direccionHotel;
     private String correoHotel;
-    private int habitaciones;
-    private String actividades;
     private String decripcionHotel;
-    private String reservaciones;
     
+    //Constructor
     public Hotel(String nombreHotel, int numeroTelefonicoHotel, String direccionHotel, String correoHotel) {
         this.nombreHotel = nombreHotel;
         this.numeroTelefonicoHotel = numeroTelefonicoHotel;
@@ -29,6 +28,7 @@ public class Hotel {
         this.correoHotel = correoHotel;
     }
 
+    //Getters & setters
     public String getNombreHotel() {
         return nombreHotel;
     }
@@ -61,22 +61,6 @@ public class Hotel {
         this.correoHotel = correoHotel;
     }
 
-    public int getHabitaciones() {
-        return habitaciones;
-    }
-
-    public void setHabitaciones(int habitaciones) {
-        this.habitaciones = habitaciones;
-    }
-
-    public String getActividades() {
-        return actividades;
-    }
-
-    public void setActividades(String actividades) {
-        this.actividades = actividades;
-    }
-
     public String getDecripcionHotel() {
         return decripcionHotel;
     }
@@ -84,13 +68,4 @@ public class Hotel {
     public void setDecripcionHotel(String decripcionHotel) {
         this.decripcionHotel = decripcionHotel;
     }
-
-    public String getReservaciones() {
-        return reservaciones;
-    }
-
-    public void setReservaciones(String reservaciones) {
-        this.reservaciones = reservaciones;
-    }
-
 }

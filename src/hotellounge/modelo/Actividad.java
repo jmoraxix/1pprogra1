@@ -13,19 +13,25 @@ package hotellounge.modelo;
  */
 public class Actividad {
 
+    //Variables de clase
     private int codigoActividad;
     private String titulo;
     private String descripcionActividad;
     private String horaInicial;
     private String horaFinal;
     private int precioPersona;
-
-    public Actividad(int codigoActividad, String titulo, String descripcionActividad) {
+    
+    //Constructor
+    public Actividad(int codigoActividad, String titulo, String descripcionActividad, String horaInicial, String horaFinal, int precioPersona) {
         this.codigoActividad = codigoActividad;
         this.titulo = titulo;
         this.descripcionActividad = descripcionActividad;
+        this.horaInicial = horaInicial;
+        this.horaFinal = horaFinal;
+        this.precioPersona = precioPersona;
     }
 
+    //Getters & setters
     public int getCodigoActividad() {
         return codigoActividad;
     }
