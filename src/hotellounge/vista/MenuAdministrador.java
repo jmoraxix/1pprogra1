@@ -37,8 +37,8 @@ public class MenuAdministrador extends VentanaBase_admin {
         jLabel1 = new javax.swing.JLabel();
         panel_info = new hotellounge.vista.base.PanelConFondo();
         AdministrarReserv = new hotellounge.vista.base.PanelConFondo();
-        AdminReservAdmin = new javax.swing.JLabel();
-        AdministrarReserv1 = new hotellounge.vista.base.PanelConFondo();
+        text_adminreserv = new javax.swing.JLabel();
+        AdminReserv = new hotellounge.vista.base.PanelConFondo();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,21 +59,23 @@ public class MenuAdministrador extends VentanaBase_admin {
 
         AdministrarReserv.setFondo(bundle.getString("MenuAdministrador.AdministrarReserv.fondo")); // NOI18N
 
-        AdminReservAdmin.setText(bundle.getString("MenuAdministrador.AdminReservAdmin.text")); // NOI18N
-        AdministrarReserv.add(AdminReservAdmin);
-        AdminReservAdmin.setBounds(20, 80, 150, 30);
+        text_adminreserv.setText(bundle.getString("MenuAdministrador.text_adminreserv.text")); // NOI18N
+        AdministrarReserv.add(text_adminreserv);
+        text_adminreserv.setBounds(20, 90, 150, 30);
+        text_adminreserv.getAccessibleContext().setAccessibleParent(AdminReserv);
 
-        AdministrarReserv1.setFondo(bundle.getString("MenuAdministrador.AdministrarReserv1.fondo")); // NOI18N
+        AdminReserv.setFondo(bundle.getString("MenuAdministrador.AdminReserv.fondo")); // NOI18N
 
         jLabel3.setText(bundle.getString("MenuAdministrador.jLabel3.text")); // NOI18N
-        AdministrarReserv1.add(jLabel3);
+        AdminReserv.add(jLabel3);
         jLabel3.setBounds(10, 80, 130, 30);
 
-        AdministrarReserv.add(AdministrarReserv1);
-        AdministrarReserv1.setBounds(30, 10, 120, 80);
+        AdministrarReserv.add(AdminReserv);
+        AdminReserv.setBounds(30, 10, 120, 80);
 
         panel_info.add(AdministrarReserv);
         AdministrarReserv.setBounds(60, 40, 180, 120);
+        AdministrarReserv.getAccessibleContext().setAccessibleParent(panelBase1);
 
         panelBase1.add(panel_info);
         panel_info.setBounds(70, 160, 640, 350);
@@ -94,13 +96,13 @@ public class MenuAdministrador extends VentanaBase_admin {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AdminReservAdmin;
+    private hotellounge.vista.base.PanelConFondo AdminReserv;
     private hotellounge.vista.base.PanelConFondo AdministrarReserv;
-    private hotellounge.vista.base.PanelConFondo AdministrarReserv1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panel_info;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
+    private javax.swing.JLabel text_adminreserv;
     // End of variables declaration//GEN-END:variables
 }
