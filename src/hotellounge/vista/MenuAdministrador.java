@@ -61,7 +61,7 @@ public class MenuAdministrador extends VentanaBase_admin {
 
         AdminReservAdmin.setText(bundle.getString("MenuAdministrador.AdminReservAdmin.text")); // NOI18N
         AdministrarReserv.add(AdminReservAdmin);
-        AdminReservAdmin.setBounds(20, 80, 130, 30);
+        AdminReservAdmin.setBounds(20, 80, 150, 30);
 
         AdministrarReserv1.setFondo(bundle.getString("MenuAdministrador.AdministrarReserv1.fondo")); // NOI18N
 
@@ -70,7 +70,7 @@ public class MenuAdministrador extends VentanaBase_admin {
         jLabel3.setBounds(10, 80, 130, 30);
 
         AdministrarReserv.add(AdministrarReserv1);
-        AdministrarReserv1.setBounds(30, 10, 120, 70);
+        AdministrarReserv1.setBounds(30, 10, 120, 80);
 
         panel_info.add(AdministrarReserv);
         AdministrarReserv.setBounds(60, 40, 180, 120);
