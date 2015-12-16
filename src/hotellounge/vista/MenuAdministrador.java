@@ -86,6 +86,11 @@ public class MenuAdministrador extends VentanaBase_admin {
         AdministrarReserv.getAccessibleContext().setAccessibleParent(panelBase1);
 
         AdministrarHabitaciones.setFondo(bundle.getString("MenuAdministrador.AdministrarHabitaciones.fondo")); // NOI18N
+        AdministrarHabitaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AdministrarHabitacionesMouseClicked(evt);
+            }
+        });
 
         text_adminhabitaciones.setText(bundle.getString("MenuAdministrador.text_adminhabitaciones.text")); // NOI18N
         AdministrarHabitaciones.add(text_adminhabitaciones);
@@ -152,7 +157,14 @@ public class MenuAdministrador extends VentanaBase_admin {
         this.dispose();
     }//GEN-LAST:event_btn_regresarMouseClicked
 
+    private void AdministrarHabitacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdministrarHabitacionesMouseClicked
+        // TODO add your handling code here:
+        new AdministrarHabitaciones().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_AdministrarHabitacionesMouseClicked
 
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo AdminHabitaciones;
     private hotellounge.vista.base.PanelConFondo AdminReserv;
