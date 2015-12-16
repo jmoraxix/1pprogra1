@@ -8,6 +8,7 @@
 package hotellounge.vista;
 
 import hotellounge.Principal;
+import hotellounge.modelo.Habitacion;
 import hotellounge.modelo.Reservacion;
 import hotellounge.vista.base.VentanaBase_usuario;
 
@@ -22,6 +23,14 @@ public class MisReservaciones extends VentanaBase_usuario {
      */
     public MisReservaciones() {
         initComponents();
+        
+        //Se popula el comboBox con las opciones
+        Habitacion habitaciones[] = Principal.getHabitaciones();
+        for (int i = 0; i < habitaciones.length; i++) {
+            if (habitaciones[i] != null) {
+                cmb_habitaciones.addItem(habitaciones[i].getTipo());
+            }
+        }
     }
 
     //Métodos para mostrar información o errores
@@ -50,6 +59,8 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
         lbl_titulo1 = new javax.swing.JLabel();
         panel_info = new hotellounge.vista.base.PanelConFondo();
+        lbl_titulo2 = new javax.swing.JLabel();
+        cmb_habitaciones = new javax.swing.JComboBox();
         ConsultarReservacion = new hotellounge.vista.base.PanelConFondo();
         panelConFondo1 = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
@@ -73,6 +84,22 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_titulo.setBounds(210, 60, 400, 70);
 
         panel_info.setFondo(bundle.getString("MisReservaciones.panel_info.fondo")); // NOI18N
+
+        lbl_titulo2.setFont(Principal.getLetraTexto3());
+        lbl_titulo2.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_titulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_titulo2.setText(bundle.getString("MisReservaciones.lbl_titulo2.text")); // NOI18N
+        panel_info.add(lbl_titulo2);
+        lbl_titulo2.setBounds(20, 20, 230, 50);
+
+        cmb_habitaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_habitacionesActionPerformed(evt);
+            }
+        });
+        panel_info.add(cmb_habitaciones);
+        cmb_habitaciones.setBounds(30, 70, 220, 30);
+
         panelBase1.add(panel_info);
         panel_info.setBounds(80, 190, 270, 350);
 
@@ -184,13 +211,19 @@ public class MisReservaciones extends VentanaBase_usuario {
         this.dispose();
     }//GEN-LAST:event_CrearReservacionMouseClicked
 
+    private void cmb_habitacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_habitacionesActionPerformed
+        //TODO agregar cambios de los labels segun la informacion
+    }//GEN-LAST:event_cmb_habitacionesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo ConsultarReservacion;
     private hotellounge.vista.base.PanelConFondo CrearReservacion;
     private hotellounge.vista.base.PanelConFondo btn_regresar;
+    private javax.swing.JComboBox cmb_habitaciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbl_titulo1;
+    private javax.swing.JLabel lbl_titulo2;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panelConFondo1;
     private hotellounge.vista.base.PanelConFondo panelConFondo4;

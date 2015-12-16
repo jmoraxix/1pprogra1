@@ -23,7 +23,7 @@ public class AdministrarHabitaciones extends VentanaBase_admin {
     public AdministrarHabitaciones() {
         initComponents();
         
-         //Se popula el comboBox con las opciones
+        //Se popula el comboBox con las opciones
         Habitacion habitaciones[] = Principal.getHabitaciones();
         for (int i = 0; i < habitaciones.length; i++) {
             if (habitaciones[i] != null) {
@@ -70,11 +70,6 @@ public class AdministrarHabitaciones extends VentanaBase_admin {
         btn_minusitem.setBounds(110, 120, 50, 20);
 
         trans_CantidadH.setEnabled(false);
-        trans_CantidadH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                trans_CantidadHActionPerformed(evt);
-            }
-        });
         panel_cantdeH.add(trans_CantidadH);
         trans_CantidadH.setBounds(70, 40, 50, 50);
 
@@ -97,7 +92,7 @@ public class AdministrarHabitaciones extends VentanaBase_admin {
             }
         });
         panel_TiposdeH.add(cmbb_tiposdeH);
-        cmbb_tiposdeH.setBounds(20, 80, 130, 30);
+        cmbb_tiposdeH.setBounds(20, 80, 150, 30);
 
         panelBase1.add(panel_TiposdeH);
         panel_TiposdeH.setBounds(40, 140, 200, 160);
@@ -113,9 +108,10 @@ public class AdministrarHabitaciones extends VentanaBase_admin {
         panel_save.add(btn_save);
         btn_save.setBounds(30, 20, 70, 60);
 
+        text_save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text_save.setText("Guardar cambios.");
         panel_save.add(text_save);
-        text_save.setBounds(20, 90, 100, 14);
+        text_save.setBounds(10, 90, 100, 14);
 
         panelBase1.add(panel_save);
         panel_save.setBounds(80, 470, 120, 120);
@@ -148,17 +144,10 @@ public class AdministrarHabitaciones extends VentanaBase_admin {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbb_tiposdeHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbb_tiposdeHActionPerformed
-       
         trans_CantidadH.setText(String.valueOf(Principal.getHabitaciones()[cmbb_tiposdeH.getSelectedIndex()].getN_habitaciones()));
-        
     }//GEN-LAST:event_cmbb_tiposdeHActionPerformed
 
-    private void trans_CantidadHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trans_CantidadHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_trans_CantidadHActionPerformed
-
     private void panel_saveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_saveMouseClicked
-       
         Principal.getHabitaciones()[cmbb_tiposdeH.getSelectedIndex()].setN_habitaciones(Integer.parseInt(trans_CantidadH.getText()));
     }//GEN-LAST:event_panel_saveMouseClicked
 
