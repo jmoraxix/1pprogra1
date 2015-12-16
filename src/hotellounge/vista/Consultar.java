@@ -8,6 +8,8 @@
 package hotellounge.vista;
 
 import hotellounge.Principal;
+import hotellounge.modelo.Cliente;
+import hotellounge.modelo.Habitacion;
 import hotellounge.modelo.Reservacion;
 import hotellounge.vista.base.TransparentTextField;
 import hotellounge.vista.base.VentanaBase_usuario;
@@ -25,15 +27,37 @@ public class Consultar extends VentanaBase_usuario {
         initComponents();
         
         //Se busca el cliente
+        Cliente clientes[] = Principal.getClientes();
+        Cliente cliente = null;
+        for (int i = 0; i < clientes.length; i++) {
+            if (clientes[i] != null) {
+                if (clientes[i].getCedula().equals(reservacion.getCliente())) {
+                    cliente = clientes[i];
+                }
+            }
+        }
+        
+        //Se busca la habitacion
+        Habitacion habitaciones[] = Principal.getHabitaciones();
+        Habitacion habitacion = null;
+        for (int i = 0; i < habitaciones.length; i++) {
+            if (habitaciones[i] != null) {
+                if (habitaciones[i].getCodigoHabitacion() == reservacion.getHabitacion()) {
+                    habitacion = habitaciones[i];
+                }
+            }
+        }
         
         //Se popula la ventana con la informacion de la reservacion
         txt_codigo.setText(String.valueOf(reservacion.getCodigoReservacion()));
         txt_cedula.setText(reservacion.getCliente());
-        //txt_correo.setText(reservacion.get);
-       
-        //Se popula el comboBox con las opciones
-        //cmb_tipoHabitacion.addItem("");
-        
+        txt_nombre.setText(cliente.getNombreCliente());
+        txt_correo.setText(cliente.getCorreo());
+        txt_telefono.setText(cliente.getTelefonoCliente());
+        txt_cantidadDias.setText(String.valueOf(reservacion.getDias()));
+        txt_cantidadPersonas.setText(String.valueOf(reservacion.getCantidadPersonas()));
+        cmb_tipoHabitacion.addItem(habitacion.getTipo());
+        fecha_reservacion.getCurrent().setTime(reservacion.getFechaReservacion());
     }
 
     /**

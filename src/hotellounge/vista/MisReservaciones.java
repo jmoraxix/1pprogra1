@@ -24,6 +24,19 @@ public class MisReservaciones extends VentanaBase_usuario {
         initComponents();
     }
 
+    //Métodos para mostrar información o errores
+    public void mostrar(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    }
+
+    public void mostrar_error(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje, "¡Error!", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+
+    public String pedirValor(String mensaje) {
+        return javax.swing.JOptionPane.showInputDialog(mensaje);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -136,15 +149,33 @@ public class MisReservaciones extends VentanaBase_usuario {
     }//GEN-LAST:event_btn_regresarMouseClicked
 
     private void ConsultarReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarReservacionMouseClicked
+        //Se pide el código de la reservación y lo convierte en un int.
         int codigo = 0;
-        Reservacion reservaciones[] = Principal.getReservaciones();
-        Reservacion reservacion;
-        for(int i = 0; i < reservaciones.length; i++){
-            if(reservaciones[i] != null)
-                if(reservaciones[i].getCodigoReservacion() == codigo)
-                    reservacion = reservaciones[i];
+        try {
+            codigo = Integer.valueOf(pedirValor("Digite el código de reservación."));
+        } catch (Exception e) {
+            mostrar_error("El código que digitó no es válido.");
         }
- 
+        
+        //Busca la reservación según el número de código.
+        Reservacion reservaciones[] = Principal.getReservaciones();
+        Reservacion reservacion = null;
+        boolean encontrado = false;
+        for (int i = 0; i < reservaciones.length; i++) {
+            if (reservaciones[i] != null) {
+                if (reservaciones[i].getCodigoReservacion() == codigo) {
+                    reservacion = reservaciones[i];
+                    encontrado = true;
+                }
+            }
+        }
+        if(encontrado){
+            new Consultar(reservacion).setVisible(true);
+            this.dispose();
+        } else
+            mostrar_error("No se encontró la reservación.");
+            
+
     }//GEN-LAST:event_ConsultarReservacionMouseClicked
 
     private void CrearReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearReservacionMouseClicked
