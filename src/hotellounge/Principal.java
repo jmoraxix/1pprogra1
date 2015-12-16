@@ -115,6 +115,7 @@ public class Principal {
             if (Principal.habitaciones[i] == null) {
                 Principal.habitaciones[i] = habitacion;
                 agregado = true;
+                break;
             }
         }
         return agregado;
@@ -130,6 +131,7 @@ public class Principal {
             if (Principal.actividades[i] == null) {
                 Principal.actividades[i] = actividad;
                 agregado = true;
+                break;
             }
         }
         return agregado;
@@ -146,6 +148,7 @@ public class Principal {
             if (Principal.reservaciones[i] == null) {
                 Principal.reservaciones[i] = reservacion;
                 agregado = true;
+                break;
             }
         }
         return agregado;

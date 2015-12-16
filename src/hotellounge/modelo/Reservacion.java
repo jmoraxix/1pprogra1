@@ -7,6 +7,8 @@
  */
 package hotellounge.modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author Cocho
@@ -17,14 +19,14 @@ public class Reservacion {
     private int codigoReservacion;
     private int dias;
     private int cantidadPersonas;
-    private String fechaReservacion;
-    private int cliente;
+    private Date fechaReservacion;
+    private String cliente;
     private int habitacion = 0;
     private int actividades[] = new int[10];
     private int precio = 0;
 
     //Constructor
-    public Reservacion(int codigoReservacion, int dias, int cantidadPersonas, String fechaReservacion, int cliente) {
+    public Reservacion(int codigoReservacion, int dias, int cantidadPersonas, Date fechaReservacion, String cliente) {
         this.codigoReservacion = codigoReservacion;
         this.dias = dias;
         this.cantidadPersonas = cantidadPersonas;
@@ -57,11 +59,11 @@ public class Reservacion {
         this.cantidadPersonas = cantidadPersonas;
     }
 
-    public String getFechaReservacion() {
+    public Date getFechaReservacion() {
         return fechaReservacion;
     }
 
-    public void setFechaReservacion(String fechaReservacion) {
+    public void setFechaReservacion(Date fechaReservacion) {
         this.fechaReservacion = fechaReservacion;
     }
 
@@ -88,5 +90,11 @@ public class Reservacion {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-
+    public String getCliente() {
+        return cliente;
+    }
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+    
 }

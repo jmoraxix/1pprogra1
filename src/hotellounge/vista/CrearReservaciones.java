@@ -8,11 +8,14 @@
 package hotellounge.vista;
 
 import hotellounge.Principal;
+import hotellounge.modelo.Cliente;
+import hotellounge.modelo.Habitacion;
+import hotellounge.modelo.Reservacion;
 import hotellounge.vista.base.TransparentTextField;
 import hotellounge.vista.base.VentanaBase_usuario;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.logging.Logger;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -22,15 +25,22 @@ import javax.swing.JTextField;
  */
 public class CrearReservaciones extends VentanaBase_usuario {
 
-    private static final Logger LOG = Logger.getLogger(CrearReservaciones.class.getName());
-
     /**
      * Creates new form CrearReservaciones
      */
     public CrearReservaciones() {
         initComponents();
+
+        //Se popula el comboBox con las opciones
+        Habitacion habitaciones[] = Principal.getHabitaciones();
+        for (int i = 0; i < habitaciones.length; i++) {
+            if (habitaciones[i] != null) {
+                cmb_tipoHabitacion.addItem(habitaciones[i].getTipo());
+            }
+        }
     }
 
+    //Método para validar correo eletrónico
     public void validarCorreo() {
         String correo;
         int a;
@@ -45,28 +55,33 @@ public class CrearReservaciones extends VentanaBase_usuario {
             if (correo.contains("@")) {
                 if (correo.contains(".com")) {
                     if (a > b) {
-
                         mostrar_error("Su correo esta mal escrito");
+                        txt_correo.setText("");
                     }
                 } else {
                     mostrar_error("Solo correos con terminacion en '.com' son válidos");
+                    txt_correo.setText("");
                 }
             } else {
                 mostrar_error("Digite un correo válido");
+                txt_correo.setText("");
             }
         } catch (Exception e) {
             mostrar_error("Digite un correo válido");
+            txt_correo.setText("");
         }
     }
 
+    //Métodos para mostrar información o errores
     public void mostrar(String mensaje) {
-        javax.swing.JOptionPane.showMessageDialog(null, mensaje);
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
     }
 
-    public static void mostrar_error(String mensaje) {
-        javax.swing.JOptionPane.showMessageDialog(null, mensaje, "¡Error!", javax.swing.JOptionPane.ERROR_MESSAGE);
+    public void mostrar_error(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje, "¡Error!", javax.swing.JOptionPane.ERROR_MESSAGE);
     }
 
+    //Métodos para validar que solo se ingresen números o letras según sea necesario
     public void soloLetras(JTextField txt) {
         txt.addKeyListener(new KeyAdapter() {
             @Override
@@ -78,7 +93,6 @@ public class CrearReservaciones extends VentanaBase_usuario {
             }
         });
     }
-
     public void soloNumeros(JTextField txt) {
         txt.addKeyListener(new KeyAdapter() {
             @Override
@@ -113,15 +127,15 @@ public class CrearReservaciones extends VentanaBase_usuario {
         txt_telefono = new TransparentTextField();
         lbl_nombre3 = new javax.swing.JLabel();
         txt_cedula = new hotellounge.vista.base.TransparentTextField();
-        panel_izq1 = new hotellounge.vista.base.PanelConFondo();
+        panel_der = new hotellounge.vista.base.PanelConFondo();
         lbl_subtitulo2 = new javax.swing.JLabel();
         lbl_nombre4 = new javax.swing.JLabel();
         cmb_tipoHabitacion = new hotellounge.vista.base.TransparentComboBox();
         lbl_fechaReservacion = new javax.swing.JLabel();
         fecha_reservacion = new datechooser.beans.DateChooserCombo();
         lbl_cantidadPersonas = new javax.swing.JLabel();
-        txt_cantidadDias = new hotellounge.vista.base.TransparentTextField();
-        txt_cantidadPersonas = new hotellounge.vista.base.TransparentTextField();
+        txt_cantidadDias = new hotellounge.vista.base.TransparentTextField("0");
+        txt_cantidadPersonas = new hotellounge.vista.base.TransparentTextField("0");
         lbl_cantidadDias = new javax.swing.JLabel();
         Boton_reservar = new javax.swing.JButton();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
@@ -203,73 +217,80 @@ public class CrearReservaciones extends VentanaBase_usuario {
         panelBase1.add(panel_izq);
         panel_izq.setBounds(60, 160, 330, 350);
 
-        panel_izq1.setFondo(bundle.getString("CrearReservaciones.panel_izq1.fondo")); // NOI18N
+        panel_der.setFondo(bundle.getString("CrearReservaciones.panel_der.fondo")); // NOI18N
 
         lbl_subtitulo2.setFont(Principal.getLetraTexto2());
         lbl_subtitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_subtitulo2.setText(bundle.getString("CrearReservaciones.lbl_subtitulo2.text")); // NOI18N
-        panel_izq1.add(lbl_subtitulo2);
+        panel_der.add(lbl_subtitulo2);
         lbl_subtitulo2.setBounds(20, 20, 290, 30);
 
         lbl_nombre4.setFont(Principal.getLetraTexto3());
         lbl_nombre4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_nombre4.setText(bundle.getString("CrearReservaciones.lbl_nombre4.text")); // NOI18N
-        panel_izq1.add(lbl_nombre4);
+        panel_der.add(lbl_nombre4);
         lbl_nombre4.setBounds(10, 60, 180, 30);
 
-        cmb_tipoHabitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_tipoHabitacionActionPerformed(evt);
-            }
-        });
-        panel_izq1.add(cmb_tipoHabitacion);
+        cmb_tipoHabitacion.setToolTipText(bundle.getString("CrearReservaciones.cmb_tipoHabitacion.toolTipText")); // NOI18N
+        panel_der.add(cmb_tipoHabitacion);
         cmb_tipoHabitacion.setBounds(40, 90, 250, 30);
 
         lbl_fechaReservacion.setFont(Principal.getLetraTexto3());
         lbl_fechaReservacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_fechaReservacion.setText(bundle.getString("CrearReservaciones.lbl_fechaReservacion.text")); // NOI18N
-        panel_izq1.add(lbl_fechaReservacion);
+        panel_der.add(lbl_fechaReservacion);
         lbl_fechaReservacion.setBounds(20, 220, 160, 30);
-        panel_izq1.add(fecha_reservacion);
+        panel_der.add(fecha_reservacion);
         fecha_reservacion.setBounds(190, 220, 100, 30);
 
         lbl_cantidadPersonas.setFont(Principal.getLetraTexto3());
         lbl_cantidadPersonas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_cantidadPersonas.setText(bundle.getString("CrearReservaciones.lbl_cantidadPersonas.text")); // NOI18N
-        panel_izq1.add(lbl_cantidadPersonas);
+        panel_der.add(lbl_cantidadPersonas);
         lbl_cantidadPersonas.setBounds(10, 170, 180, 30);
 
         txt_cantidadDias.setText(bundle.getString("CrearReservaciones.txt_cantidadDias.text")); // NOI18N
         txt_cantidadDias.setToolTipText(bundle.getString("CrearReservaciones.txt_cantidadDias.toolTipText")); // NOI18N
-        txt_cantidadDias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_cantidadDiasActionPerformed(evt);
+        soloNumeros(txt_cantidadDias);
+        txt_cantidadDias.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_cantidadDiasFocusLost(evt);
             }
         });
-        soloNumeros(txt_cantidadDias);
-        panel_izq1.add(txt_cantidadDias);
+        panel_der.add(txt_cantidadDias);
         txt_cantidadDias.setBounds(210, 130, 80, 30);
 
         txt_cantidadPersonas.setText(bundle.getString("CrearReservaciones.txt_cantidadPersonas.text")); // NOI18N
         txt_cantidadPersonas.setToolTipText(bundle.getString("CrearReservaciones.txt_cantidadPersonas.toolTipText")); // NOI18N
         soloNumeros(txt_cantidadPersonas);
-        panel_izq1.add(txt_cantidadPersonas);
+        txt_cantidadPersonas.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_cantidadPersonasFocusLost(evt);
+            }
+        });
+        panel_der.add(txt_cantidadPersonas);
         txt_cantidadPersonas.setBounds(210, 170, 80, 30);
 
         lbl_cantidadDias.setFont(Principal.getLetraTexto3());
         lbl_cantidadDias.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_cantidadDias.setText(bundle.getString("CrearReservaciones.lbl_cantidadDias.text")); // NOI18N
-        panel_izq1.add(lbl_cantidadDias);
+        panel_der.add(lbl_cantidadDias);
         lbl_cantidadDias.setBounds(30, 130, 160, 30);
 
         Boton_reservar.setText(bundle.getString("CrearReservaciones.Boton_reservar.text")); // NOI18N
+        Boton_reservar.setToolTipText(bundle.getString("CrearReservaciones.Boton_reservar.toolTipText")); // NOI18N
         Boton_reservar.setActionCommand(bundle.getString("CrearReservaciones.Boton_reservar.actionCommand")); // NOI18N
-        panel_izq1.add(Boton_reservar);
-        Boton_reservar.setBounds(140, 280, 77, 23);
+        Boton_reservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton_reservarActionPerformed(evt);
+            }
+        });
+        panel_der.add(Boton_reservar);
+        Boton_reservar.setBounds(170, 290, 120, 24);
         Boton_reservar.getAccessibleContext().setAccessibleName(bundle.getString("CrearReservaciones.Boton_reservar.AccessibleContext.accessibleName")); // NOI18N
 
-        panelBase1.add(panel_izq1);
-        panel_izq1.setBounds(430, 160, 330, 350);
+        panelBase1.add(panel_der);
+        panel_der.setBounds(430, 160, 330, 350);
 
         btn_regresar.setFondo(bundle.getString("CrearReservaciones.btn_regresar.fondo")); // NOI18N
         btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -303,17 +324,73 @@ public class CrearReservaciones extends VentanaBase_usuario {
         this.dispose();
     }//GEN-LAST:event_btn_regresarMouseClicked
 
-    private void cmb_tipoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_tipoHabitacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmb_tipoHabitacionActionPerformed
-
-    private void txt_cantidadDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_cantidadDiasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_cantidadDiasActionPerformed
-
     private void txt_correoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_correoFocusLost
         validarCorreo();
     }//GEN-LAST:event_txt_correoFocusLost
+
+    private void Boton_reservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_reservarActionPerformed
+        //Confirmar si los campos de texto están vacíos
+        if (txt_cedula.getText().equals("")
+                || txt_nombre.getText().equals("")
+                || txt_telefono.getText().equals("")
+                || txt_correo.getText().equals("")
+                || txt_cantidadDias.getText().equals("")
+                || txt_cantidadPersonas.getText().equals("")) {
+            mostrar_error("Todos los campos son requeridos. Por favor rellenar los campos antes de continuar.");
+        } //Confirmar si la fecha de reservación es posterior a la actual. 
+        else if (fecha_reservacion.getCurrent().getTime().before(new Date(System.currentTimeMillis()))) {
+            mostrar_error("Seleccione una fecha posterior a la actual.");
+        } else {
+            //Se valida si existe el cliente en la lista de clientes. Si no existe se agrega
+            boolean existe = false;
+            Cliente clientes[] = Principal.getClientes();
+            for (int i = 0; i < clientes.length; i++) {
+                if(clientes[i] != null)
+                    if (this.txt_cedula.getText().equals(clientes[i].getCedula()))
+                        existe = true;           
+            }
+            if (!existe) {
+                Principal.addCliente(new Cliente(txt_cedula.getText(),
+                        txt_nombre.getText(), txt_telefono.getText(), txt_correo.getText()));
+            }
+            //Se calcula el precio y se confirma con el cliente
+            int cantDias = Integer.parseInt(txt_cantidadDias.getText());
+            int precio = Principal.getHabitaciones()[cmb_tipoHabitacion.getSelectedIndex()].getPrecioNoche();
+            int total = cantDias * precio;
+            int dialogResult = JOptionPane.showConfirmDialog(this, "El precio total sería de C" + total + ". ¿Desea confirmar la reservación?", "Confirmar precio", JOptionPane.YES_NO_OPTION);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                //Se guarda la reservación
+                int codigo = (int) (Math.floor(Math.random()*100000));
+                int cantPersonas = Integer.parseInt(txt_cantidadPersonas.getText());
+                Principal.addReservacion(new Reservacion(codigo, cantDias, cantPersonas,
+                        fecha_reservacion.getCurrent().getTime(), txt_cedula.getText()));
+                //Mostrar codigo de reservación
+                mostrar("Su reservación está lista. Su código es: " + codigo + ".");
+                
+                //Cerramos la ventana de reservaciones y abrimos el menú anterior.
+                new MisReservaciones().setVisible(true);
+                this.dispose();
+            }
+        }
+    }//GEN-LAST:event_Boton_reservarActionPerformed
+
+    private void txt_cantidadDiasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_cantidadDiasFocusLost
+        int valor = Integer.parseInt(txt_cantidadDias.getText());
+        if (valor > 15) {
+            mostrar_error("No se pueden hacer reservaciones mayores a 15 días");
+            txt_cantidadDias.setText("0");
+        }
+    }//GEN-LAST:event_txt_cantidadDiasFocusLost
+
+    private void txt_cantidadPersonasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_cantidadPersonasFocusLost
+        int cantPersonas = Integer.parseInt(txt_cantidadPersonas.getText());
+        int maxPersonas = Principal.getHabitaciones()[cmb_tipoHabitacion.getSelectedIndex()].getMaximoPersonas();
+        if (cantPersonas > maxPersonas) {
+            mostrar_error("Debe elegir un número de personas menor a la cantidad permitida en la habitación seleccionada. El máximo "
+                    + "actual es de " + maxPersonas + " personas.");
+            txt_cantidadPersonas.setText("0");
+        }
+    }//GEN-LAST:event_txt_cantidadPersonasFocusLost
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Boton_reservar;
@@ -332,8 +409,8 @@ public class CrearReservaciones extends VentanaBase_usuario {
     private javax.swing.JLabel lbl_subtitulo1;
     private javax.swing.JLabel lbl_subtitulo2;
     private hotellounge.vista.base.PanelBase panelBase1;
+    private hotellounge.vista.base.PanelConFondo panel_der;
     private hotellounge.vista.base.PanelConFondo panel_izq;
-    private hotellounge.vista.base.PanelConFondo panel_izq1;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
     private hotellounge.vista.base.TransparentTextField txt_cantidadDias;
     private hotellounge.vista.base.TransparentTextField txt_cantidadPersonas;

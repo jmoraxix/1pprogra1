@@ -14,13 +14,13 @@ package hotellounge.modelo;
 public class Cliente {
 
     //Variables de clase
-    private int cedula;
+    private String cedula;
     private String nombreCliente;
     private String telefonoCliente;
     private String correo;
     
     //Constructor
-    public Cliente(int cedula, String nombreCliente, String telefonoCliente, String correo) {
+    public Cliente(String cedula, String nombreCliente, String telefonoCliente, String correo) {
         this.cedula = cedula;
         this.nombreCliente = nombreCliente;
         this.telefonoCliente = telefonoCliente;
@@ -28,11 +28,11 @@ public class Cliente {
     }
 
     //Getters & setters
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 

@@ -254,10 +254,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="hotellounge.vista.base.PanelConFondo" name="panel_izq1">
+        <Container class="hotellounge.vista.base.PanelConFondo" name="panel_der">
           <Properties>
             <Property name="fondo" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-              <ResourceString bundle="hotellounge/vista/Bundle.properties" key="CrearReservaciones.panel_izq1.fondo" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+              <ResourceString bundle="hotellounge/vista/Bundle.properties" key="CrearReservaciones.panel_der.fondo" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
             </Property>
           </Properties>
           <Constraints>
@@ -303,9 +303,11 @@
               </Constraints>
             </Component>
             <Component class="hotellounge.vista.base.TransparentComboBox" name="cmb_tipoHabitacion">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmb_tipoHabitacionActionPerformed"/>
-              </Events>
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+                  <ResourceString bundle="hotellounge/vista/Bundle.properties" key="CrearReservaciones.cmb_tipoHabitacion.toolTipText" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="40" y="90" width="250" height="30"/>
@@ -361,10 +363,11 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_cantidadDiasActionPerformed"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_cantidadDiasFocusLost"/>
               </Events>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="soloNumeros(txt_cantidadDias);"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new hotellounge.vista.base.TransparentTextField(&quot;0&quot;)"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="soloNumeros(txt_cantidadDias);"/>
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -381,7 +384,11 @@
                   <ResourceString bundle="hotellounge/vista/Bundle.properties" key="CrearReservaciones.txt_cantidadPersonas.toolTipText" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_cantidadPersonasFocusLost"/>
+              </Events>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new hotellounge.vista.base.TransparentTextField(&quot;0&quot;)"/>
                 <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="soloNumeros(txt_cantidadPersonas);"/>
               </AuxValues>
               <Constraints>
@@ -411,6 +418,9 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                   <ResourceString bundle="hotellounge/vista/Bundle.properties" key="CrearReservaciones.Boton_reservar.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+                  <ResourceString bundle="hotellounge/vista/Bundle.properties" key="CrearReservaciones.Boton_reservar.toolTipText" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                </Property>
                 <Property name="actionCommand" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
                   <ResourceString bundle="hotellounge/vista/Bundle.properties" key="CrearReservaciones.Boton_reservar.actionCommand" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
@@ -420,9 +430,12 @@
                   <ResourceString bundle="hotellounge/vista/Bundle.properties" key="CrearReservaciones.Boton_reservar.AccessibleContext.accessibleName" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
               </AccessibilityProperties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Boton_reservarActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="140" y="280" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="170" y="290" width="120" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
