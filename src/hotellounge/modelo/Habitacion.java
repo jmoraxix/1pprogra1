@@ -20,16 +20,19 @@ public class Habitacion {
     private String tipo;
     private int precioNoche;
     private String descripcionHabitacion;
-    private static int n_habitaciones = 10;
+    private int n_habitaciones = 10;
+    
     
     //Constructor
-    public Habitacion(int codigoHabitacion, int numeroCamas, int maximoPersonas, String tipo, int precioNoche, String descripcionHabitacion) {
+    public Habitacion(int codigoHabitacion, int numeroCamas, int maximoPersonas, String tipo, int precioNoche, String descripcionHabitacion,int n_habitaciones) {
         this.codigoHabitacion = codigoHabitacion;
         this.numeroCamas = numeroCamas;
         this.maximoPersonas = maximoPersonas;
         this.tipo = tipo;
         this.precioNoche = precioNoche;
         this.descripcionHabitacion = descripcionHabitacion;
+        this.n_habitaciones=n_habitaciones;
+        
     }
 
     //Getters & setters
@@ -80,10 +83,10 @@ public class Habitacion {
     public void setDescripcionHabitacion(String descripcionHabitacion) {
         this.descripcionHabitacion = descripcionHabitacion;
     }
-    public static int getN_habitaciones() {
+    public int getN_habitaciones() {
         return n_habitaciones;
     }
-    public static void setN_habitaciones(int n_habitaciones) {
-        Habitacion.n_habitaciones = n_habitaciones;
+    public void setN_habitaciones(int n_habitaciones) {
+       this.n_habitaciones = n_habitaciones;
     }
 }

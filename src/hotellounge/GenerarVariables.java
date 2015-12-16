@@ -18,11 +18,11 @@ public class GenerarVariables {
 
     public GenerarVariables() {
         //Genera habitaciones 
-        Principal.addHabitacion(new Habitacion(0, 1, 1, "Individual", 10000, "Habitación para una única persona. Contiene baño, televisor y cocina."));
-        Principal.addHabitacion(new Habitacion(1, 1, 2, "Simple", 12000, "Habitación para dos personas. Contiene una cama matrimonial, baño, televisor y cocina."));
-        Principal.addHabitacion(new Habitacion(2, 3, 5, "Doble", 25000, "Habitación para máximo 5 personas. Contiene dos camas matrimoniales, baño, televisor y cocina."));
-        Principal.addHabitacion(new Habitacion(3, 2, 4, "Suite", 40000, "Habitación para 4 personas como máximo. Contiene dos camas matrimoniales en cuartos separados, dos baños, un jacuzzi, cocina y comedor pequeño."));
-        Principal.addHabitacion(new Habitacion(4, 5, 10, "Grande", 60000, "Habitación para máximo 10 personas. Contiene 4 camarotes, una cama matrimonial y dos baños."));
+        Principal.addHabitacion(new Habitacion(0, 1, 1, "Individual", 10000, "Habitación para una única persona. Contiene baño, televisor y cocina.",10));
+        Principal.addHabitacion(new Habitacion(1, 1, 2, "Simple", 12000, "Habitación para dos personas. Contiene una cama matrimonial, baño, televisor y cocina.",12));
+        Principal.addHabitacion(new Habitacion(2, 3, 5, "Doble", 25000, "Habitación para máximo 5 personas. Contiene dos camas matrimoniales, baño, televisor y cocina.",15));
+        Principal.addHabitacion(new Habitacion(3, 2, 4, "Suite", 40000, "Habitación para 4 personas como máximo. Contiene dos camas matrimoniales en cuartos separados, dos baños, un jacuzzi, cocina y comedor pequeño.",5));
+        Principal.addHabitacion(new Habitacion(4, 5, 10, "Grande", 60000, "Habitación para máximo 10 personas. Contiene 4 camarotes, una cama matrimonial y dos baños.",5));
         
         //Genera actividades
         Principal.addActividad(new Actividad(0, "Piscina", "Piscina pública para clientes del hotel.", "8am", "6pm", 0));
