@@ -38,6 +38,8 @@ public class AdministrarHabitaciones extends VentanaBase_admin {
         panel_cantdeH = new hotellounge.vista.base.PanelConFondo();
         panel_cantdeH1 = new hotellounge.vista.base.PanelConFondo();
         text_cantdeH1 = new javax.swing.JLabel();
+        btn_save1 = new hotellounge.vista.base.PanelConFondo();
+        btn_save2 = new hotellounge.vista.base.PanelConFondo();
         panel_save = new hotellounge.vista.base.PanelConFondo();
         btn_save = new hotellounge.vista.base.PanelConFondo();
         text_save = new javax.swing.JLabel();
@@ -73,6 +75,14 @@ public class AdministrarHabitaciones extends VentanaBase_admin {
 
         panel_cantdeH.add(panel_cantdeH1);
         panel_cantdeH1.setBounds(350, 140, 200, 160);
+
+        btn_save1.setFondo(bundle.getString("MisReservaciones.panelConFondo4.fondo")); // NOI18N
+        panel_cantdeH.add(btn_save1);
+        btn_save1.setBounds(40, 110, 50, 40);
+
+        btn_save2.setFondo(bundle.getString("MisReservaciones.panelConFondo4.fondo")); // NOI18N
+        panel_cantdeH.add(btn_save2);
+        btn_save2.setBounds(110, 120, 50, 20);
 
         panelBase1.add(panel_cantdeH);
         panel_cantdeH.setBounds(350, 140, 190, 160);
@@ -119,6 +129,8 @@ public class AdministrarHabitaciones extends VentanaBase_admin {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo btn_save;
+    private hotellounge.vista.base.PanelConFondo btn_save1;
+    private hotellounge.vista.base.PanelConFondo btn_save2;
     private javax.swing.JComboBox cmbb_tiposdeH;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panel_TiposdeH;
