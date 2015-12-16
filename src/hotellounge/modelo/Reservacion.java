@@ -26,12 +26,13 @@ public class Reservacion {
     private int precio = 0;
 
     //Constructor
-    public Reservacion(int codigoReservacion, int dias, int cantidadPersonas, Date fechaReservacion, String cliente) {
+    public Reservacion(int codigoReservacion, int dias, int cantidadPersonas, Date fechaReservacion, String cliente, int habitacion) {
         this.codigoReservacion = codigoReservacion;
         this.dias = dias;
         this.cantidadPersonas = cantidadPersonas;
         this.fechaReservacion = fechaReservacion;
         this.cliente = cliente;
+        this.habitacion = habitacion;
     }
 
     //Getters & setters
