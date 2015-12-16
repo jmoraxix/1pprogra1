@@ -159,7 +159,7 @@ public class MenuAdministrador extends VentanaBase_admin {
 
     private void AdministrarHabitacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdministrarHabitacionesMouseClicked
         // TODO add your handling code here:
-        new AdministrarHabitaciones().setVisible(true);
+        new ManejarHabitaciones().setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_AdministrarHabitacionesMouseClicked

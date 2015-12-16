@@ -15,12 +15,12 @@ import hotellounge.vista.base.VentanaBase_admin;
  *
  * @author Oscar
  */
-public class AdministrarHabitaciones extends VentanaBase_admin {
+public class ManejarHabitaciones extends VentanaBase_admin {
 
     /**
      * Creates new form AdministrarHabitaciones
      */
-    public AdministrarHabitaciones() {
+    public ManejarHabitaciones() {
         initComponents();
         
         //Se popula el comboBox con las opciones
