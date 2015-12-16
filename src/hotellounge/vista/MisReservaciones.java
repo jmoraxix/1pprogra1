@@ -61,12 +61,20 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_info = new hotellounge.vista.base.PanelConFondo();
         lbl_titulo2 = new javax.swing.JLabel();
         cmb_habitaciones = new javax.swing.JComboBox();
+        lbl_titulotipo = new javax.swing.JLabel();
+        lbl_titulondecamas = new javax.swing.JLabel();
+        lbl_titulomaxpersonas = new javax.swing.JLabel();
+        lbl_tituloprecionche = new javax.swing.JLabel();
+        lbl_tipo = new javax.swing.JLabel();
+        lbl_ndecamas = new javax.swing.JLabel();
+        lbl_maxdepersonas = new javax.swing.JLabel();
+        lbl_precionoche = new javax.swing.JLabel();
         ConsultarReservacion = new hotellounge.vista.base.PanelConFondo();
         panelConFondo1 = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
         CrearReservacion = new hotellounge.vista.base.PanelConFondo();
-        panelConFondo4 = new hotellounge.vista.base.PanelConFondo();
+        btn_addreserv = new hotellounge.vista.base.PanelConFondo();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,7 +94,6 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_info.setFondo(bundle.getString("MisReservaciones.panel_info.fondo")); // NOI18N
 
         lbl_titulo2.setFont(Principal.getLetraTexto3());
-        lbl_titulo2.setForeground(new java.awt.Color(0, 0, 0));
         lbl_titulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_titulo2.setText(bundle.getString("MisReservaciones.lbl_titulo2.text")); // NOI18N
         panel_info.add(lbl_titulo2);
@@ -99,6 +106,38 @@ public class MisReservaciones extends VentanaBase_usuario {
         });
         panel_info.add(cmb_habitaciones);
         cmb_habitaciones.setBounds(30, 70, 220, 30);
+
+        lbl_titulotipo.setText(bundle.getString("MisReservaciones.lbl_titulotipo.text")); // NOI18N
+        panel_info.add(lbl_titulotipo);
+        lbl_titulotipo.setBounds(24, 130, 50, 20);
+
+        lbl_titulondecamas.setText(bundle.getString("MisReservaciones.lbl_titulondecamas.text")); // NOI18N
+        panel_info.add(lbl_titulondecamas);
+        lbl_titulondecamas.setBounds(20, 180, 80, 20);
+
+        lbl_titulomaxpersonas.setText(bundle.getString("MisReservaciones.lbl_titulomaxpersonas.text")); // NOI18N
+        panel_info.add(lbl_titulomaxpersonas);
+        lbl_titulomaxpersonas.setBounds(20, 230, 110, 14);
+
+        lbl_tituloprecionche.setText(bundle.getString("MisReservaciones.lbl_tituloprecionche.text")); // NOI18N
+        panel_info.add(lbl_tituloprecionche);
+        lbl_tituloprecionche.setBounds(20, 290, 70, 14);
+
+        lbl_tipo.setText(bundle.getString("MisReservaciones.lbl_tipo.text")); // NOI18N
+        panel_info.add(lbl_tipo);
+        lbl_tipo.setBounds(130, 130, 120, 20);
+
+        lbl_ndecamas.setText(bundle.getString("MisReservaciones.lbl_ndecamas.text")); // NOI18N
+        panel_info.add(lbl_ndecamas);
+        lbl_ndecamas.setBounds(150, 180, 70, 20);
+
+        lbl_maxdepersonas.setText(bundle.getString("MisReservaciones.lbl_maxdepersonas.text")); // NOI18N
+        panel_info.add(lbl_maxdepersonas);
+        lbl_maxdepersonas.setBounds(150, 230, 100, 14);
+
+        lbl_precionoche.setText(bundle.getString("MisReservaciones.lbl_precionoche.text")); // NOI18N
+        panel_info.add(lbl_precionoche);
+        lbl_precionoche.setBounds(140, 290, 90, 20);
 
         panelBase1.add(panel_info);
         panel_info.setBounds(80, 190, 270, 350);
@@ -139,9 +178,9 @@ public class MisReservaciones extends VentanaBase_usuario {
             }
         });
 
-        panelConFondo4.setFondo(bundle.getString("MisReservaciones.panelConFondo4.fondo")); // NOI18N
-        CrearReservacion.add(panelConFondo4);
-        panelConFondo4.setBounds(20, 20, 140, 80);
+        btn_addreserv.setFondo(bundle.getString("MisReservaciones.btn_addreserv.fondo")); // NOI18N
+        CrearReservacion.add(btn_addreserv);
+        btn_addreserv.setBounds(20, 20, 140, 80);
 
         jLabel2.setFont(Principal.getLetraTexto3());
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -212,21 +251,33 @@ public class MisReservaciones extends VentanaBase_usuario {
     }//GEN-LAST:event_CrearReservacionMouseClicked
 
     private void cmb_habitacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_habitacionesActionPerformed
-        //TODO agregar cambios de los labels segun la informacion
+      Habitacion habitacion = Principal.getHabitaciones()[cmb_habitaciones.getSelectedIndex()];
+       lbl_tipo.setText(habitacion.getTipo());
+       lbl_ndecamas.setText(String.valueOf(habitacion.getNumeroCamas()));
+       lbl_maxdepersonas.setText(String.valueOf(habitacion.getMaximoPersonas()));
+       lbl_precionoche.setText(String.valueOf(habitacion.getPrecioNoche()));
     }//GEN-LAST:event_cmb_habitacionesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo ConsultarReservacion;
     private hotellounge.vista.base.PanelConFondo CrearReservacion;
+    private hotellounge.vista.base.PanelConFondo btn_addreserv;
     private hotellounge.vista.base.PanelConFondo btn_regresar;
     private javax.swing.JComboBox cmb_habitaciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lbl_maxdepersonas;
+    private javax.swing.JLabel lbl_ndecamas;
+    private javax.swing.JLabel lbl_precionoche;
+    private javax.swing.JLabel lbl_tipo;
     private javax.swing.JLabel lbl_titulo1;
     private javax.swing.JLabel lbl_titulo2;
+    private javax.swing.JLabel lbl_titulomaxpersonas;
+    private javax.swing.JLabel lbl_titulondecamas;
+    private javax.swing.JLabel lbl_tituloprecionche;
+    private javax.swing.JLabel lbl_titulotipo;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panelConFondo1;
-    private hotellounge.vista.base.PanelConFondo panelConFondo4;
     private hotellounge.vista.base.PanelConFondo panel_info;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
     // End of variables declaration//GEN-END:variables
