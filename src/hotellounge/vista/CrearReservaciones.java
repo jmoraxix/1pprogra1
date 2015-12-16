@@ -363,7 +363,8 @@ public class CrearReservaciones extends VentanaBase_usuario {
                 int codigo = (int) (Math.floor(Math.random()*100000));
                 int cantPersonas = Integer.parseInt(txt_cantidadPersonas.getText());
                 Principal.addReservacion(new Reservacion(codigo, cantDias, cantPersonas,
-                        fecha_reservacion.getCurrent().getTime(), txt_cedula.getText()));
+                        fecha_reservacion.getCurrent().getTime(), txt_cedula.getText(), 
+                        cmb_tipoHabitacion.getSelectedIndex()));
                 //Mostrar codigo de reservación
                 mostrar("Su reservación está lista. Su código es: " + codigo + ".");
                 
