@@ -8,7 +8,9 @@
 package hotellounge.vista;
 
 import hotellounge.Principal;
+import hotellounge.modelo.Reservacion;
 import hotellounge.vista.base.VentanaBase_admin;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +23,19 @@ public class MenuAdministrador extends VentanaBase_admin {
      */
     public MenuAdministrador() {
         initComponents();
+    }
+
+    //Métodos para mostrar información o errores
+    public void mostrar(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    }
+
+    public void mostrar_error(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje, "¡Error!", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+
+    public String pedirValor(String mensaje) {
+        return javax.swing.JOptionPane.showInputDialog(mensaje);
     }
 
     /**
@@ -82,7 +97,7 @@ public class MenuAdministrador extends VentanaBase_admin {
         AdminReserv.setBounds(30, 10, 120, 80);
 
         panel_info.add(AdministrarReserv);
-        AdministrarReserv.setBounds(60, 40, 180, 120);
+        AdministrarReserv.setBounds(70, 40, 180, 120);
         AdministrarReserv.getAccessibleContext().setAccessibleParent(panelBase1);
 
         AdministrarHabitaciones.setFondo(bundle.getString("MenuAdministrador.AdministrarHabitaciones.fondo")); // NOI18N
@@ -109,6 +124,11 @@ public class MenuAdministrador extends VentanaBase_admin {
         AdministrarHabitaciones.setBounds(380, 40, 180, 120);
 
         DeleteReservP.setFondo(bundle.getString("MenuAdministrador.DeleteReservP.fondo")); // NOI18N
+        DeleteReservP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteReservPMouseClicked(evt);
+            }
+        });
 
         text_deletereserv.setText(bundle.getString("MenuAdministrador.text_deletereserv.text")); // NOI18N
         DeleteReservP.add(text_deletereserv);
@@ -121,10 +141,10 @@ public class MenuAdministrador extends VentanaBase_admin {
         jLabel5.setBounds(10, 80, 130, 30);
 
         DeleteReservP.add(iconDeleteReserv);
-        iconDeleteReserv.setBounds(30, 10, 110, 80);
+        iconDeleteReserv.setBounds(40, 10, 110, 80);
 
         panel_info.add(DeleteReservP);
-        DeleteReservP.setBounds(70, 190, 180, 120);
+        DeleteReservP.setBounds(230, 180, 180, 120);
 
         panelBase1.add(panel_info);
         panel_info.setBounds(70, 160, 640, 350);
@@ -163,6 +183,37 @@ public class MenuAdministrador extends VentanaBase_admin {
         this.dispose();
         
     }//GEN-LAST:event_AdministrarHabitacionesMouseClicked
+
+    private void DeleteReservPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteReservPMouseClicked
+        //Se pide el código de la reservación y lo convierte en un int.
+        int codigo = 0;
+        try {
+            codigo = Integer.valueOf(pedirValor("Digite el código de reservación."));
+        } catch (Exception e) {
+            mostrar_error("El código que digitó no es válido.");
+        }
+        
+        //Busca la reservación según el número de código.
+        Reservacion reservaciones[] = Principal.getReservaciones();
+        int indice = -1;
+        boolean encontrado = false;
+        for (int i = 0; i < reservaciones.length; i++) {
+            if (reservaciones[i] != null) {
+                if (reservaciones[i].getCodigoReservacion() == codigo) {
+                    indice = i;
+                    encontrado = true;
+                }
+            }
+        }
+        if(encontrado){
+            int dialogResult = JOptionPane.showConfirmDialog(this, "¿Está seguro que quiere borrar la reservación " + codigo + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                reservaciones[indice] = null;
+                mostrar("La reservacición ha sido borrada exitosamente.");
+            }
+        } else
+            mostrar_error("No se encontró la reservación.");
+    }//GEN-LAST:event_DeleteReservPMouseClicked
 
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
