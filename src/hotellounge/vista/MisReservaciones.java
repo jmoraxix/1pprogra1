@@ -8,6 +8,7 @@
 package hotellounge.vista;
 
 import hotellounge.Principal;
+import hotellounge.modelo.Reservacion;
 import hotellounge.vista.base.VentanaBase_usuario;
 
 /**
@@ -135,7 +136,15 @@ public class MisReservaciones extends VentanaBase_usuario {
     }//GEN-LAST:event_btn_regresarMouseClicked
 
     private void ConsultarReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarReservacionMouseClicked
-     
+        int codigo = 0;
+        Reservacion reservaciones[] = Principal.getReservaciones();
+        Reservacion reservacion;
+        for(int i = 0; i < reservaciones.length; i++){
+            if(reservaciones[i] != null)
+                if(reservaciones[i].getCodigoReservacion() == codigo)
+                    reservacion = reservaciones[i];
+        }
+ 
     }//GEN-LAST:event_ConsultarReservacionMouseClicked
 
     private void CrearReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearReservacionMouseClicked

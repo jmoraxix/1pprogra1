@@ -3,24 +3,37 @@
  * José David Mora Loría
  * Oscar Mauricio Gil
  * Melvin Arce Rodriguez
- * Dec 4, 2015
+ * Nov 30, 2015
  */
 package hotellounge.vista;
 
 import hotellounge.Principal;
+import hotellounge.modelo.Reservacion;
+import hotellounge.vista.base.TransparentTextField;
 import hotellounge.vista.base.VentanaBase_usuario;
 
 /**
  *
- * @author cocho
+ * @author jmora
  */
 public class Consultar extends VentanaBase_usuario {
 
     /**
-     * Creates new form Consultar
+     * Creates new form CrearReservaciones
      */
-    public Consultar() {
+    public Consultar(Reservacion reservacion) {
         initComponents();
+        
+        //Se busca el cliente
+        
+        //Se popula la ventana con la informacion de la reservacion
+        txt_codigo.setText(String.valueOf(reservacion.getCodigoReservacion()));
+        txt_cedula.setText(reservacion.getCliente());
+        //txt_correo.setText(reservacion.get);
+       
+        //Se popula el comboBox con las opciones
+        //cmb_tipoHabitacion.addItem("");
+        
     }
 
     /**
@@ -34,48 +47,173 @@ public class Consultar extends VentanaBase_usuario {
 
         panelBase1 = new hotellounge.vista.base.PanelBase();
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
-        lbl_titulo = new javax.swing.JLabel();
+        lbl_CrearReservaciones = new javax.swing.JLabel();
         panel_izq = new hotellounge.vista.base.PanelConFondo();
         lbl_subtitulo1 = new javax.swing.JLabel();
+        lbl_nombre = new javax.swing.JLabel();
         lbl_cedula = new javax.swing.JLabel();
+        lbl_nombre2 = new javax.swing.JLabel();
+        txt_correo = new TransparentTextField();
+        txt_nombre = new TransparentTextField();
+        txt_telefono = new TransparentTextField();
+        lbl_nombre3 = new javax.swing.JLabel();
         txt_cedula = new hotellounge.vista.base.TransparentTextField();
+        txt_codigo = new hotellounge.vista.base.TransparentTextField();
+        lbl_cedula1 = new javax.swing.JLabel();
+        panel_der = new hotellounge.vista.base.PanelConFondo();
+        lbl_subtitulo2 = new javax.swing.JLabel();
+        lbl_nombre4 = new javax.swing.JLabel();
+        cmb_tipoHabitacion = new hotellounge.vista.base.TransparentComboBox();
+        lbl_fechaReservacion = new javax.swing.JLabel();
+        fecha_reservacion = new datechooser.beans.DateChooserCombo();
+        lbl_cantidadPersonas = new javax.swing.JLabel();
+        txt_cantidadDias = new hotellounge.vista.base.TransparentTextField("0");
+        txt_cantidadPersonas = new hotellounge.vista.base.TransparentTextField("0");
+        lbl_cantidadDias = new javax.swing.JLabel();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("hotellounge/vista/Bundle"); // NOI18N
-        panel_titulo.setFondo(bundle.getString("CrearReservaciones.panel_titulo.fondo")); // NOI18N
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbl_titulo.setFont(Principal.getLetraTexto1());
-        lbl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_titulo.setText(bundle.getString("CrearReservaciones.lbl_titulo.text")); // NOI18N
-        panel_titulo.add(lbl_titulo);
-        lbl_titulo.setBounds(20, 10, 380, 40);
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("hotellounge/vista/Bundle"); // NOI18N
+        panel_titulo.setFondo(bundle.getString("Consultar.panel_titulo.fondo")); // NOI18N
+
+        lbl_CrearReservaciones.setFont(Principal.getLetraTexto1());
+        lbl_CrearReservaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_CrearReservaciones.setText(bundle.getString("Consultar.lbl_CrearReservaciones.text")); // NOI18N
+        panel_titulo.add(lbl_CrearReservaciones);
+        lbl_CrearReservaciones.setBounds(20, 10, 380, 40);
 
         panelBase1.add(panel_titulo);
         panel_titulo.setBounds(200, 60, 420, 60);
 
-        panel_izq.setFondo(bundle.getString("CrearReservaciones.panel_izq.fondo")); // NOI18N
+        panel_izq.setFondo(bundle.getString("Consultar.panel_izq.fondo")); // NOI18N
 
         lbl_subtitulo1.setFont(Principal.getLetraTexto2());
         lbl_subtitulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_subtitulo1.setText(bundle.getString("CrearReservaciones.lbl_subtitulo1.text")); // NOI18N
+        lbl_subtitulo1.setText(bundle.getString("Consultar.lbl_subtitulo1.text")); // NOI18N
         panel_izq.add(lbl_subtitulo1);
         lbl_subtitulo1.setBounds(20, 20, 290, 30);
 
+        lbl_nombre.setFont(Principal.getLetraTexto3());
+        lbl_nombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_nombre.setText(bundle.getString("Consultar.lbl_nombre.text")); // NOI18N
+        panel_izq.add(lbl_nombre);
+        lbl_nombre.setBounds(20, 220, 80, 30);
+
         lbl_cedula.setFont(Principal.getLetraTexto3());
         lbl_cedula.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbl_cedula.setText(bundle.getString("CrearReservaciones.lbl_cedula.text")); // NOI18N
+        lbl_cedula.setText(bundle.getString("Consultar.lbl_cedula.text")); // NOI18N
         panel_izq.add(lbl_cedula);
-        lbl_cedula.setBounds(20, 70, 80, 30);
+        lbl_cedula.setBounds(20, 100, 80, 30);
 
-        txt_cedula.setText(bundle.getString("CrearReservaciones.txt_cedula.text")); // NOI18N
-        txt_cedula.setToolTipText(bundle.getString("CrearReservaciones.txt_cedula.toolTipText")); // NOI18N
+        lbl_nombre2.setFont(Principal.getLetraTexto3());
+        lbl_nombre2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_nombre2.setText(bundle.getString("Consultar.lbl_nombre2.text")); // NOI18N
+        panel_izq.add(lbl_nombre2);
+        lbl_nombre2.setBounds(20, 180, 80, 30);
+
+        txt_correo.setText(bundle.getString("Consultar.txt_correo.text")); // NOI18N
+        txt_correo.setToolTipText(bundle.getString("Consultar.txt_correo.toolTipText")); // NOI18N
+        txt_correo.setEnabled(false);
+        panel_izq.add(txt_correo);
+        txt_correo.setBounds(110, 220, 200, 30);
+
+        txt_nombre.setText(bundle.getString("Consultar.txt_nombre.text")); // NOI18N
+        txt_nombre.setToolTipText(bundle.getString("Consultar.txt_nombre.toolTipText")); // NOI18N
+        txt_nombre.setEnabled(false);
+        panel_izq.add(txt_nombre);
+        txt_nombre.setBounds(110, 140, 200, 30);
+
+        txt_telefono.setText(bundle.getString("Consultar.txt_telefono.text")); // NOI18N
+        txt_telefono.setToolTipText(bundle.getString("Consultar.txt_telefono.toolTipText")); // NOI18N
+        txt_telefono.setEnabled(false);
+        panel_izq.add(txt_telefono);
+        txt_telefono.setBounds(110, 180, 200, 30);
+
+        lbl_nombre3.setFont(Principal.getLetraTexto3());
+        lbl_nombre3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_nombre3.setText(bundle.getString("Consultar.lbl_nombre3.text")); // NOI18N
+        panel_izq.add(lbl_nombre3);
+        lbl_nombre3.setBounds(20, 140, 80, 30);
+
+        txt_cedula.setText(bundle.getString("Consultar.txt_cedula.text")); // NOI18N
+        txt_cedula.setToolTipText(bundle.getString("Consultar.txt_cedula.toolTipText")); // NOI18N
+        txt_cedula.setEnabled(false);
         panel_izq.add(txt_cedula);
-        txt_cedula.setBounds(110, 70, 200, 30);
+        txt_cedula.setBounds(110, 100, 200, 30);
+
+        txt_codigo.setText(bundle.getString("Consultar.txt_codigo.text")); // NOI18N
+        txt_codigo.setToolTipText(bundle.getString("Consultar.txt_codigo.toolTipText")); // NOI18N
+        txt_codigo.setEnabled(false);
+        panel_izq.add(txt_codigo);
+        txt_codigo.setBounds(110, 60, 200, 30);
+
+        lbl_cedula1.setFont(Principal.getLetraTexto3());
+        lbl_cedula1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_cedula1.setText(bundle.getString("Consultar.lbl_cedula1.text")); // NOI18N
+        panel_izq.add(lbl_cedula1);
+        lbl_cedula1.setBounds(20, 60, 80, 30);
 
         panelBase1.add(panel_izq);
-        panel_izq.setBounds(60, 160, 500, 350);
+        panel_izq.setBounds(60, 160, 330, 350);
 
-        btn_regresar.setFondo(bundle.getString("CrearReservaciones.btn_regresar.fondo")); // NOI18N
+        panel_der.setFondo(bundle.getString("Consultar.panel_der.fondo")); // NOI18N
+
+        lbl_subtitulo2.setFont(Principal.getLetraTexto2());
+        lbl_subtitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_subtitulo2.setText(bundle.getString("Consultar.lbl_subtitulo2.text")); // NOI18N
+        panel_der.add(lbl_subtitulo2);
+        lbl_subtitulo2.setBounds(20, 20, 290, 30);
+
+        lbl_nombre4.setFont(Principal.getLetraTexto3());
+        lbl_nombre4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_nombre4.setText(bundle.getString("Consultar.lbl_nombre4.text")); // NOI18N
+        panel_der.add(lbl_nombre4);
+        lbl_nombre4.setBounds(10, 60, 180, 30);
+
+        cmb_tipoHabitacion.setToolTipText(bundle.getString("Consultar.cmb_tipoHabitacion.toolTipText")); // NOI18N
+        cmb_tipoHabitacion.setEnabled(false);
+        panel_der.add(cmb_tipoHabitacion);
+        cmb_tipoHabitacion.setBounds(40, 90, 250, 30);
+
+        lbl_fechaReservacion.setFont(Principal.getLetraTexto3());
+        lbl_fechaReservacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_fechaReservacion.setText(bundle.getString("Consultar.lbl_fechaReservacion.text")); // NOI18N
+        panel_der.add(lbl_fechaReservacion);
+        lbl_fechaReservacion.setBounds(20, 220, 160, 30);
+
+        fecha_reservacion.setEnabled(false);
+        panel_der.add(fecha_reservacion);
+        fecha_reservacion.setBounds(190, 220, 100, 30);
+
+        lbl_cantidadPersonas.setFont(Principal.getLetraTexto3());
+        lbl_cantidadPersonas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_cantidadPersonas.setText(bundle.getString("Consultar.lbl_cantidadPersonas.text")); // NOI18N
+        panel_der.add(lbl_cantidadPersonas);
+        lbl_cantidadPersonas.setBounds(10, 170, 180, 30);
+
+        txt_cantidadDias.setText(bundle.getString("Consultar.txt_cantidadDias.text")); // NOI18N
+        txt_cantidadDias.setToolTipText(bundle.getString("Consultar.txt_cantidadDias.toolTipText")); // NOI18N
+        txt_cantidadDias.setEnabled(false);
+        panel_der.add(txt_cantidadDias);
+        txt_cantidadDias.setBounds(210, 130, 80, 30);
+
+        txt_cantidadPersonas.setText(bundle.getString("Consultar.txt_cantidadPersonas.text")); // NOI18N
+        txt_cantidadPersonas.setToolTipText(bundle.getString("Consultar.txt_cantidadPersonas.toolTipText")); // NOI18N
+        txt_cantidadPersonas.setEnabled(false);
+        panel_der.add(txt_cantidadPersonas);
+        txt_cantidadPersonas.setBounds(210, 170, 80, 30);
+
+        lbl_cantidadDias.setFont(Principal.getLetraTexto3());
+        lbl_cantidadDias.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbl_cantidadDias.setText(bundle.getString("Consultar.lbl_cantidadDias.text")); // NOI18N
+        panel_der.add(lbl_cantidadDias);
+        lbl_cantidadDias.setBounds(30, 130, 160, 30);
+
+        panelBase1.add(panel_der);
+        panel_der.setBounds(430, 160, 330, 350);
+
+        btn_regresar.setFondo(bundle.getString("Consultar.btn_regresar.fondo")); // NOI18N
         btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_regresarMouseClicked(evt);
@@ -84,8 +222,8 @@ public class Consultar extends VentanaBase_usuario {
         panelBase1.add(btn_regresar);
         btn_regresar.setBounds(40, 70, 80, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -98,6 +236,8 @@ public class Consultar extends VentanaBase_usuario {
                 .addComponent(panelBase1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseClicked
@@ -105,15 +245,32 @@ public class Consultar extends VentanaBase_usuario {
         this.dispose();
     }//GEN-LAST:event_btn_regresarMouseClicked
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo btn_regresar;
+    private hotellounge.vista.base.TransparentComboBox cmb_tipoHabitacion;
+    private datechooser.beans.DateChooserCombo fecha_reservacion;
+    private javax.swing.JLabel lbl_CrearReservaciones;
+    private javax.swing.JLabel lbl_cantidadDias;
+    private javax.swing.JLabel lbl_cantidadPersonas;
     private javax.swing.JLabel lbl_cedula;
+    private javax.swing.JLabel lbl_cedula1;
+    private javax.swing.JLabel lbl_fechaReservacion;
+    private javax.swing.JLabel lbl_nombre;
+    private javax.swing.JLabel lbl_nombre2;
+    private javax.swing.JLabel lbl_nombre3;
+    private javax.swing.JLabel lbl_nombre4;
     private javax.swing.JLabel lbl_subtitulo1;
-    private javax.swing.JLabel lbl_titulo;
+    private javax.swing.JLabel lbl_subtitulo2;
     private hotellounge.vista.base.PanelBase panelBase1;
+    private hotellounge.vista.base.PanelConFondo panel_der;
     private hotellounge.vista.base.PanelConFondo panel_izq;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
+    private hotellounge.vista.base.TransparentTextField txt_cantidadDias;
+    private hotellounge.vista.base.TransparentTextField txt_cantidadPersonas;
     private hotellounge.vista.base.TransparentTextField txt_cedula;
+    private hotellounge.vista.base.TransparentTextField txt_codigo;
+    private javax.swing.JTextField txt_correo;
+    private javax.swing.JTextField txt_nombre;
+    private javax.swing.JTextField txt_telefono;
     // End of variables declaration//GEN-END:variables
 }
