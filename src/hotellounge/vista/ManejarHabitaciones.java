@@ -46,7 +46,7 @@ public class ManejarHabitaciones extends VentanaBase_admin {
         panel_cantdeH = new hotellounge.vista.base.PanelConFondo();
         btn_additem = new hotellounge.vista.base.PanelConFondo();
         btn_minusitem = new hotellounge.vista.base.PanelConFondo();
-        trans_CantidadH = new hotellounge.vista.base.TransparentTextField();
+        txt_cantidadH = new hotellounge.vista.base.TransparentTextField();
         text_canthabitaciones = new javax.swing.JLabel();
         panel_TiposdeH = new hotellounge.vista.base.PanelConFondo();
         text_tiposdeH = new javax.swing.JLabel();
@@ -55,6 +55,8 @@ public class ManejarHabitaciones extends VentanaBase_admin {
         btn_save = new hotellounge.vista.base.PanelConFondo();
         text_save = new javax.swing.JLabel();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
+        panel_titulo = new hotellounge.vista.base.PanelConFondo();
+        lbl_tituloManejarHab = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,29 +64,43 @@ public class ManejarHabitaciones extends VentanaBase_admin {
         panel_cantdeH.setFondo(bundle.getString("MisReservaciones.panel_info.fondo")); // NOI18N
 
         btn_additem.setFondo(bundle.getString("MisReservaciones.panelConFondo4.fondo")); // NOI18N
+        btn_additem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_additemMouseClicked(evt);
+            }
+        });
         panel_cantdeH.add(btn_additem);
-        btn_additem.setBounds(40, 110, 50, 40);
+        btn_additem.setBounds(120, 60, 50, 40);
 
         btn_minusitem.setFondo(bundle.getString("MisReservaciones.panelConFondo4.fondo")); // NOI18N
+        btn_minusitem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_minusitemMouseClicked(evt);
+            }
+        });
         panel_cantdeH.add(btn_minusitem);
-        btn_minusitem.setBounds(110, 120, 50, 20);
+        btn_minusitem.setBounds(120, 110, 50, 20);
 
-        trans_CantidadH.setEnabled(false);
-        panel_cantdeH.add(trans_CantidadH);
-        trans_CantidadH.setBounds(70, 40, 50, 50);
+        txt_cantidadH.setEnabled(false);
+        panel_cantdeH.add(txt_cantidadH);
+        txt_cantidadH.setBounds(30, 60, 70, 70);
 
+        text_canthabitaciones.setForeground(new java.awt.Color(0, 0, 0));
+        text_canthabitaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text_canthabitaciones.setText("Cantidad de habitaciones.");
         panel_cantdeH.add(text_canthabitaciones);
-        text_canthabitaciones.setBounds(30, 20, 140, 14);
+        text_canthabitaciones.setBounds(10, 14, 170, 30);
 
         panelBase1.add(panel_cantdeH);
-        panel_cantdeH.setBounds(350, 140, 190, 160);
+        panel_cantdeH.setBounds(450, 190, 190, 160);
 
         panel_TiposdeH.setFondo(bundle.getString("MisReservaciones.panel_info.fondo")); // NOI18N
 
-        text_tiposdeH.setText("Tipos de habitaciones.");
+        text_tiposdeH.setForeground(new java.awt.Color(0, 0, 0));
+        text_tiposdeH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text_tiposdeH.setText("Tipos de habitaciones");
         panel_TiposdeH.add(text_tiposdeH);
-        text_tiposdeH.setBounds(20, 30, 160, 40);
+        text_tiposdeH.setBounds(10, 30, 180, 40);
 
         cmbb_tiposdeH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +111,7 @@ public class ManejarHabitaciones extends VentanaBase_admin {
         cmbb_tiposdeH.setBounds(20, 80, 150, 30);
 
         panelBase1.add(panel_TiposdeH);
-        panel_TiposdeH.setBounds(40, 140, 200, 160);
+        panel_TiposdeH.setBounds(200, 190, 200, 160);
 
         panel_save.setFondo(bundle.getString("MisReservaciones.panel_info.fondo")); // NOI18N
         panel_save.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -106,15 +122,16 @@ public class ManejarHabitaciones extends VentanaBase_admin {
 
         btn_save.setFondo(bundle.getString("MisReservaciones.panelConFondo4.fondo")); // NOI18N
         panel_save.add(btn_save);
-        btn_save.setBounds(30, 20, 70, 60);
+        btn_save.setBounds(40, 30, 70, 60);
 
+        text_save.setForeground(new java.awt.Color(0, 0, 0));
         text_save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text_save.setText("Guardar cambios.");
         panel_save.add(text_save);
-        text_save.setBounds(10, 90, 100, 14);
+        text_save.setBounds(10, 100, 120, 30);
 
         panelBase1.add(panel_save);
-        panel_save.setBounds(80, 470, 120, 120);
+        panel_save.setBounds(640, 380, 140, 140);
 
         btn_regresar.setFondo(bundle.getString("MisReservaciones.btn_regresar.fondo")); // NOI18N
         btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -124,6 +141,17 @@ public class ManejarHabitaciones extends VentanaBase_admin {
         });
         panelBase1.add(btn_regresar);
         btn_regresar.setBounds(50, 40, 80, 40);
+
+        panel_titulo.setFondo(bundle.getString("MenuAdministrador.panel_titulo.fondo")); // NOI18N
+
+        lbl_tituloManejarHab.setFont(Principal.getLetraTexto1());
+        lbl_tituloManejarHab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_tituloManejarHab.setText(bundle.getString("MenuAdministrador.jLabel1.text")); // NOI18N
+        panel_titulo.add(lbl_tituloManejarHab);
+        lbl_tituloManejarHab.setBounds(20, 10, 390, 60);
+
+        panelBase1.add(panel_titulo);
+        panel_titulo.setBounds(200, 60, 430, 80);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,37 +172,43 @@ public class ManejarHabitaciones extends VentanaBase_admin {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbb_tiposdeHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbb_tiposdeHActionPerformed
-        trans_CantidadH.setText(String.valueOf(Principal.getHabitaciones()[cmbb_tiposdeH.getSelectedIndex()].getN_habitaciones()));
+        txt_cantidadH.setText(String.valueOf(Principal.getHabitaciones()[cmbb_tiposdeH.getSelectedIndex()].getN_habitaciones()));
     }//GEN-LAST:event_cmbb_tiposdeHActionPerformed
 
     private void panel_saveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_saveMouseClicked
-        Principal.getHabitaciones()[cmbb_tiposdeH.getSelectedIndex()].setN_habitaciones(Integer.parseInt(trans_CantidadH.getText()));
+        Principal.getHabitaciones()[cmbb_tiposdeH.getSelectedIndex()].setN_habitaciones(Integer.parseInt(txt_cantidadH.getText()));
     }//GEN-LAST:event_panel_saveMouseClicked
 
     private void btn_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseClicked
         new MenuAdministrador().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_regresarMouseClicked
-            
-    
-    /**
-     * @param args the command line arguments
-     */
-  
 
+    private void btn_additemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_additemMouseClicked
+        txt_cantidadH.setText(String.valueOf(Integer.valueOf(txt_cantidadH.getText())+1));
+    }//GEN-LAST:event_btn_additemMouseClicked
+
+    private void btn_minusitemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_minusitemMouseClicked
+        int cantidad = Integer.valueOf(txt_cantidadH.getText());
+        if(cantidad > 0)
+            txt_cantidadH.setText(String.valueOf(cantidad-1));
+    }//GEN-LAST:event_btn_minusitemMouseClicked
+         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo btn_additem;
     private hotellounge.vista.base.PanelConFondo btn_minusitem;
     private hotellounge.vista.base.PanelConFondo btn_regresar;
     private hotellounge.vista.base.PanelConFondo btn_save;
     private javax.swing.JComboBox cmbb_tiposdeH;
+    private javax.swing.JLabel lbl_tituloManejarHab;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panel_TiposdeH;
     private hotellounge.vista.base.PanelConFondo panel_cantdeH;
     private hotellounge.vista.base.PanelConFondo panel_save;
+    private hotellounge.vista.base.PanelConFondo panel_titulo;
     private javax.swing.JLabel text_canthabitaciones;
     private javax.swing.JLabel text_save;
     private javax.swing.JLabel text_tiposdeH;
-    private hotellounge.vista.base.TransparentTextField trans_CantidadH;
+    private hotellounge.vista.base.TransparentTextField txt_cantidadH;
     // End of variables declaration//GEN-END:variables
 }
