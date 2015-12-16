@@ -40,6 +40,14 @@ public class MenuAdministrador extends VentanaBase_admin {
         text_adminreserv = new javax.swing.JLabel();
         AdminReserv = new hotellounge.vista.base.PanelConFondo();
         jLabel3 = new javax.swing.JLabel();
+        AdministrarReserv2 = new hotellounge.vista.base.PanelConFondo();
+        text_adminreserv2 = new javax.swing.JLabel();
+        AdministrarReserv3 = new hotellounge.vista.base.PanelConFondo();
+        text_adminreserv3 = new javax.swing.JLabel();
+        AdministrarHabitaciones = new hotellounge.vista.base.PanelConFondo();
+        text_adminhabitaciones = new javax.swing.JLabel();
+        iconAdminH = new hotellounge.vista.base.PanelConFondo();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,7 +70,6 @@ public class MenuAdministrador extends VentanaBase_admin {
         text_adminreserv.setText(bundle.getString("MenuAdministrador.text_adminreserv.text")); // NOI18N
         AdministrarReserv.add(text_adminreserv);
         text_adminreserv.setBounds(20, 90, 150, 30);
-        text_adminreserv.getAccessibleContext().setAccessibleParent(AdminReserv);
 
         AdminReserv.setFondo(bundle.getString("MenuAdministrador.AdminReserv.fondo")); // NOI18N
 
@@ -73,9 +80,45 @@ public class MenuAdministrador extends VentanaBase_admin {
         AdministrarReserv.add(AdminReserv);
         AdminReserv.setBounds(30, 10, 120, 80);
 
+        AdministrarReserv2.setFondo(bundle.getString("MenuAdministrador.AdministrarReserv2.fondo")); // NOI18N
+
+        text_adminreserv2.setText(bundle.getString("MenuAdministrador.text_adminreserv2.text")); // NOI18N
+        AdministrarReserv2.add(text_adminreserv2);
+        text_adminreserv2.setBounds(20, 90, 150, 30);
+
+        AdministrarReserv3.setFondo(bundle.getString("MenuAdministrador.AdministrarReserv3.fondo")); // NOI18N
+
+        text_adminreserv3.setText(bundle.getString("MenuAdministrador.text_adminreserv3.text")); // NOI18N
+        AdministrarReserv3.add(text_adminreserv3);
+        text_adminreserv3.setBounds(20, 90, 150, 30);
+
+        AdministrarReserv2.add(AdministrarReserv3);
+        AdministrarReserv3.setBounds(60, 40, 180, 120);
+
+        AdministrarReserv.add(AdministrarReserv2);
+        AdministrarReserv2.setBounds(60, 40, 180, 120);
+
         panel_info.add(AdministrarReserv);
         AdministrarReserv.setBounds(60, 40, 180, 120);
         AdministrarReserv.getAccessibleContext().setAccessibleParent(panelBase1);
+
+        AdministrarHabitaciones.setFondo(bundle.getString("MenuAdministrador.AdministrarHabitaciones.fondo")); // NOI18N
+
+        text_adminhabitaciones.setText(bundle.getString("MenuAdministrador.text_adminhabitaciones.text")); // NOI18N
+        AdministrarHabitaciones.add(text_adminhabitaciones);
+        text_adminhabitaciones.setBounds(20, 90, 150, 30);
+
+        iconAdminH.setFondo(bundle.getString("MenuAdministrador.iconAdminH.fondo")); // NOI18N
+
+        jLabel4.setText(bundle.getString("MenuAdministrador.jLabel4.text")); // NOI18N
+        iconAdminH.add(jLabel4);
+        jLabel4.setBounds(10, 80, 130, 30);
+
+        AdministrarHabitaciones.add(iconAdminH);
+        iconAdminH.setBounds(40, 10, 120, 80);
+
+        panel_info.add(AdministrarHabitaciones);
+        AdministrarHabitaciones.setBounds(380, 40, 180, 120);
 
         panelBase1.add(panel_info);
         panel_info.setBounds(70, 160, 640, 350);
@@ -97,12 +140,20 @@ public class MenuAdministrador extends VentanaBase_admin {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo AdminReserv;
+    private hotellounge.vista.base.PanelConFondo AdministrarHabitaciones;
     private hotellounge.vista.base.PanelConFondo AdministrarReserv;
+    private hotellounge.vista.base.PanelConFondo AdministrarReserv2;
+    private hotellounge.vista.base.PanelConFondo AdministrarReserv3;
+    private hotellounge.vista.base.PanelConFondo iconAdminH;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panel_info;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
+    private javax.swing.JLabel text_adminhabitaciones;
     private javax.swing.JLabel text_adminreserv;
+    private javax.swing.JLabel text_adminreserv2;
+    private javax.swing.JLabel text_adminreserv3;
     // End of variables declaration//GEN-END:variables
 }
