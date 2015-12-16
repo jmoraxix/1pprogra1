@@ -48,6 +48,7 @@ public class MenuAdministrador extends VentanaBase_admin {
         text_deletereserv = new javax.swing.JLabel();
         iconDeleteReserv = new hotellounge.vista.base.PanelConFondo();
         jLabel5 = new javax.swing.JLabel();
+        btn_regresar = new hotellounge.vista.base.PanelConFondo();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,6 +124,15 @@ public class MenuAdministrador extends VentanaBase_admin {
         panelBase1.add(panel_info);
         panel_info.setBounds(70, 160, 640, 350);
 
+        btn_regresar.setFondo(bundle.getString("MenuAdministrador.btn_regresar.fondo")); // NOI18N
+        btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseClicked(evt);
+            }
+        });
+        panelBase1.add(btn_regresar);
+        btn_regresar.setBounds(40, 70, 80, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,6 +147,11 @@ public class MenuAdministrador extends VentanaBase_admin {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseClicked
+        new Home().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_regresarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo AdminHabitaciones;
@@ -144,6 +159,7 @@ public class MenuAdministrador extends VentanaBase_admin {
     private hotellounge.vista.base.PanelConFondo AdministrarHabitaciones;
     private hotellounge.vista.base.PanelConFondo AdministrarReserv;
     private hotellounge.vista.base.PanelConFondo DeleteReservP;
+    private hotellounge.vista.base.PanelConFondo btn_regresar;
     private hotellounge.vista.base.PanelConFondo iconDeleteReserv;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
