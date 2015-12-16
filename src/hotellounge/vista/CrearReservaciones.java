@@ -136,11 +136,13 @@ public class CrearReservaciones extends VentanaBase_usuario {
 
         txt_nombre.setText(bundle.getString("CrearReservaciones.txt_nombre.text")); // NOI18N
         txt_nombre.setToolTipText(bundle.getString("CrearReservaciones.txt_nombre.toolTipText")); // NOI18N
+        soloLetras(txt_nombre);
         panel_izq.add(txt_nombre);
         txt_nombre.setBounds(110, 110, 200, 30);
 
         txt_telefono.setText(bundle.getString("CrearReservaciones.txt_telefono.text")); // NOI18N
         txt_telefono.setToolTipText(bundle.getString("CrearReservaciones.txt_telefono.toolTipText")); // NOI18N
+        soloNumeros(txt_telefono);
         panel_izq.add(txt_telefono);
         txt_telefono.setBounds(110, 150, 200, 30);
 
@@ -202,11 +204,13 @@ public class CrearReservaciones extends VentanaBase_usuario {
                 txt_cantidadDiasActionPerformed(evt);
             }
         });
+        soloNumeros(txt_cantidadDias);
         panel_izq1.add(txt_cantidadDias);
         txt_cantidadDias.setBounds(210, 130, 80, 30);
 
         txt_cantidadPersonas.setText(bundle.getString("CrearReservaciones.txt_cantidadPersonas.text")); // NOI18N
         txt_cantidadPersonas.setToolTipText(bundle.getString("CrearReservaciones.txt_cantidadPersonas.toolTipText")); // NOI18N
+        soloNumeros(txt_cantidadPersonas);
         panel_izq1.add(txt_cantidadPersonas);
         txt_cantidadPersonas.setBounds(210, 170, 80, 30);
 
