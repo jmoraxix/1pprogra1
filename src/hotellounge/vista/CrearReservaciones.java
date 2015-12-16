@@ -13,6 +13,7 @@ import hotellounge.vista.base.VentanaBase_usuario;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -28,6 +29,42 @@ public class CrearReservaciones extends VentanaBase_usuario {
      */
     public CrearReservaciones() {
         initComponents();
+    }
+
+    public void validarCorreo() {
+        String correo;
+        int a;
+        int b;
+
+        correo = txt_correo.getText();
+
+        a = correo.indexOf("@");
+        b = correo.indexOf(".com");
+
+        try {
+            if (correo.contains("@")) {
+                if (correo.contains(".com")) {
+                    if (a > b) {
+
+                        mostrar_error("Su correo esta mal escrito");
+                    }
+                } else {
+                    mostrar_error("Solo correos con terminacion en '.com' son válidos");
+                }
+            } else {
+                mostrar_error("Digite un correo válido");
+            }
+        } catch (Exception e) {
+            mostrar_error("Digite un correo válido");
+        }
+    }
+
+    public void mostrar(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(null, mensaje);
+    }
+
+    public static void mostrar_error(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(null, mensaje, "¡Error!", javax.swing.JOptionPane.ERROR_MESSAGE);
     }
 
     public void soloLetras(JTextField txt) {
@@ -131,6 +168,11 @@ public class CrearReservaciones extends VentanaBase_usuario {
 
         txt_correo.setText(bundle.getString("CrearReservaciones.txt_correo.text")); // NOI18N
         txt_correo.setToolTipText(bundle.getString("CrearReservaciones.txt_correo.toolTipText")); // NOI18N
+        txt_correo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_correoFocusLost(evt);
+            }
+        });
         panel_izq.add(txt_correo);
         txt_correo.setBounds(110, 190, 200, 30);
 
@@ -268,6 +310,10 @@ public class CrearReservaciones extends VentanaBase_usuario {
     private void txt_cantidadDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_cantidadDiasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_cantidadDiasActionPerformed
+
+    private void txt_correoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_correoFocusLost
+        validarCorreo();
+    }//GEN-LAST:event_txt_correoFocusLost
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Boton_reservar;
