@@ -157,9 +157,9 @@ public class CrearReservaciones extends VentanaBase_usuario {
         lbl_fechaReservacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_fechaReservacion.setText(bundle.getString("CrearReservaciones.lbl_fechaReservacion.text")); // NOI18N
         panel_izq1.add(lbl_fechaReservacion);
-        lbl_fechaReservacion.setBounds(0, 220, 160, 30);
+        lbl_fechaReservacion.setBounds(10, 220, 160, 30);
         panel_izq1.add(fecha_reservacion);
-        fecha_reservacion.setBounds(170, 220, 100, 30);
+        fecha_reservacion.setBounds(180, 220, 100, 30);
 
         lbl_cantidadPersonas.setFont(Principal.getLetraTexto3());
         lbl_cantidadPersonas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
