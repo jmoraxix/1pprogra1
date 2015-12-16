@@ -10,6 +10,7 @@ package hotellounge.vista.base;
 import hotellounge.vista.IniciarSesion;
 import hotellounge.HotelLounge;
 import hotellounge.Principal;
+import hotellounge.vista.About;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.logging.Level;
@@ -99,6 +100,6 @@ public class VentanaBase_usuario extends JFrame {
         new IniciarSesion(this, true).setVisible(true);
     }
     private void m_nosotrosActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        new About(this, true).setVisible(true);
     }                 
 }
