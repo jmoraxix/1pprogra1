@@ -10,7 +10,10 @@ package hotellounge.vista;
 import hotellounge.Principal;
 import hotellounge.vista.base.TransparentTextField;
 import hotellounge.vista.base.VentanaBase_usuario;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -19,12 +22,36 @@ import java.util.logging.Logger;
 public class CrearReservaciones extends VentanaBase_usuario {
 
     private static final Logger LOG = Logger.getLogger(CrearReservaciones.class.getName());
- 
+
     /**
      * Creates new form CrearReservaciones
      */
     public CrearReservaciones() {
         initComponents();
+    }
+
+    public void soloLetras(JTextField txt) {
+        txt.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (Character.isDigit(c)) {
+                    e.consume();
+                }
+            }
+        });
+    }
+
+    public void soloNumeros(JTextField txt) {
+        txt.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    e.consume();
+                }
+            }
+        });
     }
 
     /**
@@ -125,6 +152,7 @@ public class CrearReservaciones extends VentanaBase_usuario {
 
         txt_cedula.setText(bundle.getString("CrearReservaciones.txt_cedula.text")); // NOI18N
         txt_cedula.setToolTipText(bundle.getString("CrearReservaciones.txt_cedula.toolTipText")); // NOI18N
+        soloNumeros(txt_cedula);
         panel_izq.add(txt_cedula);
         txt_cedula.setBounds(110, 70, 200, 30);
 
@@ -143,7 +171,7 @@ public class CrearReservaciones extends VentanaBase_usuario {
         lbl_nombre4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_nombre4.setText(bundle.getString("CrearReservaciones.lbl_nombre4.text")); // NOI18N
         panel_izq1.add(lbl_nombre4);
-        lbl_nombre4.setBounds(40, 50, 180, 30);
+        lbl_nombre4.setBounds(10, 60, 180, 30);
 
         cmb_tipoHabitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,15 +185,15 @@ public class CrearReservaciones extends VentanaBase_usuario {
         lbl_fechaReservacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_fechaReservacion.setText(bundle.getString("CrearReservaciones.lbl_fechaReservacion.text")); // NOI18N
         panel_izq1.add(lbl_fechaReservacion);
-        lbl_fechaReservacion.setBounds(10, 220, 160, 30);
+        lbl_fechaReservacion.setBounds(20, 220, 160, 30);
         panel_izq1.add(fecha_reservacion);
-        fecha_reservacion.setBounds(180, 220, 100, 30);
+        fecha_reservacion.setBounds(190, 220, 100, 30);
 
         lbl_cantidadPersonas.setFont(Principal.getLetraTexto3());
         lbl_cantidadPersonas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_cantidadPersonas.setText(bundle.getString("CrearReservaciones.lbl_cantidadPersonas.text")); // NOI18N
         panel_izq1.add(lbl_cantidadPersonas);
-        lbl_cantidadPersonas.setBounds(40, 170, 110, 30);
+        lbl_cantidadPersonas.setBounds(10, 170, 180, 30);
 
         txt_cantidadDias.setText(bundle.getString("CrearReservaciones.txt_cantidadDias.text")); // NOI18N
         txt_cantidadDias.setToolTipText(bundle.getString("CrearReservaciones.txt_cantidadDias.toolTipText")); // NOI18N
@@ -175,18 +203,18 @@ public class CrearReservaciones extends VentanaBase_usuario {
             }
         });
         panel_izq1.add(txt_cantidadDias);
-        txt_cantidadDias.setBounds(160, 130, 130, 30);
+        txt_cantidadDias.setBounds(210, 130, 80, 30);
 
         txt_cantidadPersonas.setText(bundle.getString("CrearReservaciones.txt_cantidadPersonas.text")); // NOI18N
         txt_cantidadPersonas.setToolTipText(bundle.getString("CrearReservaciones.txt_cantidadPersonas.toolTipText")); // NOI18N
         panel_izq1.add(txt_cantidadPersonas);
-        txt_cantidadPersonas.setBounds(160, 170, 130, 30);
+        txt_cantidadPersonas.setBounds(210, 170, 80, 30);
 
         lbl_cantidadDias.setFont(Principal.getLetraTexto3());
         lbl_cantidadDias.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_cantidadDias.setText(bundle.getString("CrearReservaciones.lbl_cantidadDias.text")); // NOI18N
         panel_izq1.add(lbl_cantidadDias);
-        lbl_cantidadDias.setBounds(60, 130, 90, 30);
+        lbl_cantidadDias.setBounds(30, 130, 160, 30);
 
         Boton_reservar.setText(bundle.getString("CrearReservaciones.Boton_reservar.text")); // NOI18N
         Boton_reservar.setActionCommand(bundle.getString("CrearReservaciones.Boton_reservar.actionCommand")); // NOI18N
