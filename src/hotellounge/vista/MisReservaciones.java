@@ -107,37 +107,49 @@ public class MisReservaciones extends VentanaBase_usuario {
         panel_info.add(cmb_habitaciones);
         cmb_habitaciones.setBounds(30, 70, 220, 30);
 
+        lbl_titulotipo.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_titulotipo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_titulotipo.setText(bundle.getString("MisReservaciones.lbl_titulotipo.text")); // NOI18N
         panel_info.add(lbl_titulotipo);
-        lbl_titulotipo.setBounds(24, 130, 50, 20);
+        lbl_titulotipo.setBounds(24, 130, 120, 20);
 
+        lbl_titulondecamas.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_titulondecamas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_titulondecamas.setText(bundle.getString("MisReservaciones.lbl_titulondecamas.text")); // NOI18N
         panel_info.add(lbl_titulondecamas);
-        lbl_titulondecamas.setBounds(20, 180, 80, 20);
+        lbl_titulondecamas.setBounds(20, 170, 120, 20);
 
+        lbl_titulomaxpersonas.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_titulomaxpersonas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_titulomaxpersonas.setText(bundle.getString("MisReservaciones.lbl_titulomaxpersonas.text")); // NOI18N
         panel_info.add(lbl_titulomaxpersonas);
-        lbl_titulomaxpersonas.setBounds(20, 230, 110, 14);
+        lbl_titulomaxpersonas.setBounds(20, 210, 120, 20);
 
+        lbl_tituloprecionche.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_tituloprecionche.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbl_tituloprecionche.setText(bundle.getString("MisReservaciones.lbl_tituloprecionche.text")); // NOI18N
         panel_info.add(lbl_tituloprecionche);
-        lbl_tituloprecionche.setBounds(20, 290, 70, 14);
+        lbl_tituloprecionche.setBounds(20, 250, 120, 20);
 
+        lbl_tipo.setForeground(new java.awt.Color(0, 0, 0));
         lbl_tipo.setText(bundle.getString("MisReservaciones.lbl_tipo.text")); // NOI18N
         panel_info.add(lbl_tipo);
-        lbl_tipo.setBounds(130, 130, 120, 20);
+        lbl_tipo.setBounds(150, 130, 100, 20);
 
+        lbl_ndecamas.setForeground(new java.awt.Color(0, 0, 0));
         lbl_ndecamas.setText(bundle.getString("MisReservaciones.lbl_ndecamas.text")); // NOI18N
         panel_info.add(lbl_ndecamas);
-        lbl_ndecamas.setBounds(150, 180, 70, 20);
+        lbl_ndecamas.setBounds(150, 170, 100, 20);
 
+        lbl_maxdepersonas.setForeground(new java.awt.Color(0, 0, 0));
         lbl_maxdepersonas.setText(bundle.getString("MisReservaciones.lbl_maxdepersonas.text")); // NOI18N
         panel_info.add(lbl_maxdepersonas);
-        lbl_maxdepersonas.setBounds(150, 230, 100, 14);
+        lbl_maxdepersonas.setBounds(150, 210, 100, 20);
 
+        lbl_precionoche.setForeground(new java.awt.Color(0, 0, 0));
         lbl_precionoche.setText(bundle.getString("MisReservaciones.lbl_precionoche.text")); // NOI18N
         panel_info.add(lbl_precionoche);
-        lbl_precionoche.setBounds(140, 290, 90, 20);
+        lbl_precionoche.setBounds(150, 250, 100, 20);
 
         panelBase1.add(panel_info);
         panel_info.setBounds(80, 190, 270, 350);

@@ -56,7 +56,7 @@ public class ManejarHabitaciones extends VentanaBase_admin {
         text_save = new javax.swing.JLabel();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
-        lbl_tituloManejarHab = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,11 +144,12 @@ public class ManejarHabitaciones extends VentanaBase_admin {
 
         panel_titulo.setFondo(bundle.getString("MenuAdministrador.panel_titulo.fondo")); // NOI18N
 
-        lbl_tituloManejarHab.setFont(Principal.getLetraTexto1());
-        lbl_tituloManejarHab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_tituloManejarHab.setText(bundle.getString("MenuAdministrador.jLabel1.text")); // NOI18N
-        panel_titulo.add(lbl_tituloManejarHab);
-        lbl_tituloManejarHab.setBounds(20, 10, 390, 60);
+        jLabel1.setFont(Principal.getLetraTexto1());
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Manejar habitaciones");
+        panel_titulo.add(jLabel1);
+        jLabel1.setBounds(20, 10, 390, 60);
 
         panelBase1.add(panel_titulo);
         panel_titulo.setBounds(200, 60, 430, 80);
@@ -200,7 +201,7 @@ public class ManejarHabitaciones extends VentanaBase_admin {
     private hotellounge.vista.base.PanelConFondo btn_regresar;
     private hotellounge.vista.base.PanelConFondo btn_save;
     private javax.swing.JComboBox cmbb_tiposdeH;
-    private javax.swing.JLabel lbl_tituloManejarHab;
+    private javax.swing.JLabel jLabel1;
     private hotellounge.vista.base.PanelBase panelBase1;
     private hotellounge.vista.base.PanelConFondo panel_TiposdeH;
     private hotellounge.vista.base.PanelConFondo panel_cantdeH;

@@ -51,10 +51,6 @@ public class MenuAdministrador extends VentanaBase_admin {
         panel_titulo = new hotellounge.vista.base.PanelConFondo();
         jLabel1 = new javax.swing.JLabel();
         panel_info = new hotellounge.vista.base.PanelConFondo();
-        AdministrarReserv = new hotellounge.vista.base.PanelConFondo();
-        text_adminreserv = new javax.swing.JLabel();
-        AdminReserv = new hotellounge.vista.base.PanelConFondo();
-        jLabel3 = new javax.swing.JLabel();
         AdministrarHabitaciones = new hotellounge.vista.base.PanelConFondo();
         text_adminhabitaciones = new javax.swing.JLabel();
         AdminHabitaciones = new hotellounge.vista.base.PanelConFondo();
@@ -63,6 +59,12 @@ public class MenuAdministrador extends VentanaBase_admin {
         text_deletereserv = new javax.swing.JLabel();
         iconDeleteReserv = new hotellounge.vista.base.PanelConFondo();
         jLabel5 = new javax.swing.JLabel();
+        ConsultarReservacion = new hotellounge.vista.base.PanelConFondo();
+        panelConFondo1 = new hotellounge.vista.base.PanelConFondo();
+        jLabel2 = new javax.swing.JLabel();
+        ConsultarReservacion1 = new hotellounge.vista.base.PanelConFondo();
+        panelConFondo2 = new hotellounge.vista.base.PanelConFondo();
+        jLabel3 = new javax.swing.JLabel();
         btn_regresar = new hotellounge.vista.base.PanelConFondo();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,25 +83,6 @@ public class MenuAdministrador extends VentanaBase_admin {
 
         panel_info.setFondo(bundle.getString("MenuAdministrador.panel_info.fondo")); // NOI18N
 
-        AdministrarReserv.setFondo(bundle.getString("MenuAdministrador.AdministrarReserv.fondo")); // NOI18N
-
-        text_adminreserv.setText(bundle.getString("MenuAdministrador.text_adminreserv.text")); // NOI18N
-        AdministrarReserv.add(text_adminreserv);
-        text_adminreserv.setBounds(20, 90, 150, 30);
-
-        AdminReserv.setFondo(bundle.getString("MenuAdministrador.AdminReserv.fondo")); // NOI18N
-
-        jLabel3.setText(bundle.getString("MenuAdministrador.jLabel3.text")); // NOI18N
-        AdminReserv.add(jLabel3);
-        jLabel3.setBounds(10, 80, 130, 30);
-
-        AdministrarReserv.add(AdminReserv);
-        AdminReserv.setBounds(30, 10, 120, 80);
-
-        panel_info.add(AdministrarReserv);
-        AdministrarReserv.setBounds(70, 40, 180, 120);
-        AdministrarReserv.getAccessibleContext().setAccessibleParent(panelBase1);
-
         AdministrarHabitaciones.setFondo(bundle.getString("MenuAdministrador.AdministrarHabitaciones.fondo")); // NOI18N
         AdministrarHabitaciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,9 +90,10 @@ public class MenuAdministrador extends VentanaBase_admin {
             }
         });
 
+        text_adminhabitaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text_adminhabitaciones.setText(bundle.getString("MenuAdministrador.text_adminhabitaciones.text")); // NOI18N
         AdministrarHabitaciones.add(text_adminhabitaciones);
-        text_adminhabitaciones.setBounds(20, 90, 150, 30);
+        text_adminhabitaciones.setBounds(10, 110, 170, 30);
 
         AdminHabitaciones.setFondo(bundle.getString("MenuAdministrador.AdminHabitaciones.fondo")); // NOI18N
 
@@ -118,10 +102,10 @@ public class MenuAdministrador extends VentanaBase_admin {
         jLabel4.setBounds(10, 80, 130, 30);
 
         AdministrarHabitaciones.add(AdminHabitaciones);
-        AdminHabitaciones.setBounds(40, 10, 120, 80);
+        AdminHabitaciones.setBounds(40, 20, 120, 80);
 
         panel_info.add(AdministrarHabitaciones);
-        AdministrarHabitaciones.setBounds(380, 40, 180, 120);
+        AdministrarHabitaciones.setBounds(380, 20, 190, 160);
 
         DeleteReservP.setFondo(bundle.getString("MenuAdministrador.DeleteReservP.fondo")); // NOI18N
         DeleteReservP.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -130,9 +114,10 @@ public class MenuAdministrador extends VentanaBase_admin {
             }
         });
 
+        text_deletereserv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text_deletereserv.setText(bundle.getString("MenuAdministrador.text_deletereserv.text")); // NOI18N
         DeleteReservP.add(text_deletereserv);
-        text_deletereserv.setBounds(20, 90, 150, 30);
+        text_deletereserv.setBounds(20, 110, 150, 30);
 
         iconDeleteReserv.setFondo(bundle.getString("MenuAdministrador.iconDeleteReserv.fondo")); // NOI18N
 
@@ -141,13 +126,53 @@ public class MenuAdministrador extends VentanaBase_admin {
         jLabel5.setBounds(10, 80, 130, 30);
 
         DeleteReservP.add(iconDeleteReserv);
-        iconDeleteReserv.setBounds(40, 10, 110, 80);
+        iconDeleteReserv.setBounds(40, 20, 110, 80);
 
         panel_info.add(DeleteReservP);
-        DeleteReservP.setBounds(230, 180, 180, 120);
+        DeleteReservP.setBounds(230, 180, 190, 160);
+
+        ConsultarReservacion.setFondo(bundle.getString("MenuAdministrador.ConsultarReservacion.fondo")); // NOI18N
+        ConsultarReservacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultarReservacionMouseClicked(evt);
+            }
+        });
+
+        panelConFondo1.setFondo(bundle.getString("MenuAdministrador.panelConFondo1.fondo")); // NOI18N
+        ConsultarReservacion.add(panelConFondo1);
+        panelConFondo1.setBounds(20, 20, 140, 90);
+
+        jLabel2.setFont(Principal.getLetraTexto3());
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText(bundle.getString("MenuAdministrador.jLabel2.text")); // NOI18N
+        ConsultarReservacion.add(jLabel2);
+        jLabel2.setBounds(10, 110, 170, 30);
+
+        panel_info.add(ConsultarReservacion);
+        ConsultarReservacion.setBounds(480, 360, 180, 160);
+
+        ConsultarReservacion1.setFondo(bundle.getString("MenuAdministrador.ConsultarReservacion1.fondo")); // NOI18N
+        ConsultarReservacion1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultarReservacion1MouseClicked(evt);
+            }
+        });
+
+        panelConFondo2.setFondo(bundle.getString("MenuAdministrador.panelConFondo2.fondo")); // NOI18N
+        ConsultarReservacion1.add(panelConFondo2);
+        panelConFondo2.setBounds(30, 20, 140, 90);
+
+        jLabel3.setFont(Principal.getLetraTexto3());
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText(bundle.getString("MenuAdministrador.jLabel3.text")); // NOI18N
+        ConsultarReservacion1.add(jLabel3);
+        jLabel3.setBounds(10, 110, 170, 30);
+
+        panel_info.add(ConsultarReservacion1);
+        ConsultarReservacion1.setBounds(60, 20, 190, 160);
 
         panelBase1.add(panel_info);
-        panel_info.setBounds(70, 160, 640, 350);
+        panel_info.setBounds(70, 150, 640, 360);
 
         btn_regresar.setFondo(bundle.getString("MenuAdministrador.btn_regresar.fondo")); // NOI18N
         btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -215,24 +240,84 @@ public class MenuAdministrador extends VentanaBase_admin {
             mostrar_error("No se encontró la reservación.");
     }//GEN-LAST:event_DeleteReservPMouseClicked
 
+    private void ConsultarReservacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarReservacionMouseClicked
+        //Se pide el código de la reservación y lo convierte en un int.
+        int codigo = 0;
+        try {
+            codigo = Integer.valueOf(pedirValor("Digite el código de reservación."));
+        } catch (Exception e) {
+            mostrar_error("El código que digitó no es válido.");
+        }
+
+        //Busca la reservación según el número de código.
+        Reservacion reservaciones[] = Principal.getReservaciones();
+        Reservacion reservacion = null;
+        boolean encontrado = false;
+        for (int i = 0; i < reservaciones.length; i++) {
+            if (reservaciones[i] != null) {
+                if (reservaciones[i].getCodigoReservacion() == codigo) {
+                    reservacion = reservaciones[i];
+                    encontrado = true;
+                }
+            }
+        }
+        if(encontrado){
+            new Consultar(reservacion).setVisible(true);
+            this.dispose();
+        } else
+        mostrar_error("No se encontró la reservación.");
+
+    }//GEN-LAST:event_ConsultarReservacionMouseClicked
+
+    private void ConsultarReservacion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarReservacion1MouseClicked
+        //Se pide el código de la reservación y lo convierte en un int.
+        int codigo = 0;
+        try {
+            codigo = Integer.valueOf(pedirValor("Digite el código de reservación."));
+        } catch (Exception e) {
+            mostrar_error("El código que digitó no es válido.");
+        }
+
+        //Busca la reservación según el número de código.
+        Reservacion reservaciones[] = Principal.getReservaciones();
+        Reservacion reservacion = null;
+        boolean encontrado = false;
+        for (int i = 0; i < reservaciones.length; i++) {
+            if (reservaciones[i] != null) {
+                if (reservaciones[i].getCodigoReservacion() == codigo) {
+                    reservacion = reservaciones[i];
+                    encontrado = true;
+                }
+            }
+        }
+        if(encontrado){
+            new Consultar(reservacion).setVisible(true);
+            this.dispose();
+        } else
+        mostrar_error("No se encontró la reservación.");
+
+    }//GEN-LAST:event_ConsultarReservacion1MouseClicked
+
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hotellounge.vista.base.PanelConFondo AdminHabitaciones;
-    private hotellounge.vista.base.PanelConFondo AdminReserv;
     private hotellounge.vista.base.PanelConFondo AdministrarHabitaciones;
-    private hotellounge.vista.base.PanelConFondo AdministrarReserv;
+    private hotellounge.vista.base.PanelConFondo ConsultarReservacion;
+    private hotellounge.vista.base.PanelConFondo ConsultarReservacion1;
     private hotellounge.vista.base.PanelConFondo DeleteReservP;
     private hotellounge.vista.base.PanelConFondo btn_regresar;
     private hotellounge.vista.base.PanelConFondo iconDeleteReserv;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private hotellounge.vista.base.PanelBase panelBase1;
+    private hotellounge.vista.base.PanelConFondo panelConFondo1;
+    private hotellounge.vista.base.PanelConFondo panelConFondo2;
     private hotellounge.vista.base.PanelConFondo panel_info;
     private hotellounge.vista.base.PanelConFondo panel_titulo;
     private javax.swing.JLabel text_adminhabitaciones;
-    private javax.swing.JLabel text_adminreserv;
     private javax.swing.JLabel text_deletereserv;
     // End of variables declaration//GEN-END:variables
 }
