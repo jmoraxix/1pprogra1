@@ -80,5 +80,10 @@ public class Habitacion {
     public void setDescripcionHabitacion(String descripcionHabitacion) {
         this.descripcionHabitacion = descripcionHabitacion;
     }
-
+    public static int getN_habitaciones() {
+        return n_habitaciones;
+    }
+    public static void setN_habitaciones(int n_habitaciones) {
+        Habitacion.n_habitaciones = n_habitaciones;
+    }
 }
